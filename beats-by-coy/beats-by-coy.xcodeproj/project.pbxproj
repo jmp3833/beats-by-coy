@@ -12,8 +12,8 @@
 		D0B878D81C7B51F800015C9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B878D61C7B51F800015C9C /* Main.storyboard */; };
 		D0B878DA1C7B51F800015C9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0B878D91C7B51F800015C9C /* Assets.xcassets */; };
 		D0B878DD1C7B51F800015C9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B878DB1C7B51F800015C9C /* LaunchScreen.storyboard */; };
-		D0B878E81C7B51F900015C9C /* beats_by_coyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B878E71C7B51F900015C9C /* beats_by_coyTests.swift */; };
-		D0B878F31C7B51F900015C9C /* beats_by_coyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B878F21C7B51F900015C9C /* beats_by_coyUITests.swift */; };
+		D0B878E81C7B51F900015C9C /* BeatsByCoyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B878E71C7B51F900015C9C /* BeatsByCoyTests.swift */; };
+		D0B878F31C7B51F900015C9C /* BeatsByCoyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B878F21C7B51F900015C9C /* BeatsByCoyUITests.swift */; };
 		D0B878F81C7B51F900015C9C /* beats-by-coy WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D0B878F71C7B51F900015C9C /* beats-by-coy WatchKit App.app */; };
 		D0B878FE1C7B51F900015C9C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B878FC1C7B51F900015C9C /* Interface.storyboard */; };
 		D0B879001C7B51F900015C9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0B878FF1C7B51F900015C9C /* Assets.xcassets */; };
@@ -89,10 +89,10 @@
 		D0B878DC1C7B51F800015C9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0B878DE1C7B51F800015C9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0B878E31C7B51F900015C9C /* beats-by-coyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "beats-by-coyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0B878E71C7B51F900015C9C /* beats_by_coyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = beats_by_coyTests.swift; sourceTree = "<group>"; };
+		D0B878E71C7B51F900015C9C /* BeatsByCoyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatsByCoyTests.swift; sourceTree = "<group>"; };
 		D0B878E91C7B51F900015C9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0B878EE1C7B51F900015C9C /* beats-by-coyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "beats-by-coyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0B878F21C7B51F900015C9C /* beats_by_coyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = beats_by_coyUITests.swift; sourceTree = "<group>"; };
+		D0B878F21C7B51F900015C9C /* BeatsByCoyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatsByCoyUITests.swift; sourceTree = "<group>"; };
 		D0B878F41C7B51F900015C9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0B878F71C7B51F900015C9C /* beats-by-coy WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "beats-by-coy WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B878FD1C7B51F900015C9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 		D0B878E61C7B51F900015C9C /* beats-by-coyTests */ = {
 			isa = PBXGroup;
 			children = (
-				D0B878E71C7B51F900015C9C /* beats_by_coyTests.swift */,
+				D0B878E71C7B51F900015C9C /* BeatsByCoyTests.swift */,
 				D0B878E91C7B51F900015C9C /* Info.plist */,
 			);
 			path = "beats-by-coyTests";
@@ -188,7 +188,7 @@
 		D0B878F11C7B51F900015C9C /* beats-by-coyUITests */ = {
 			isa = PBXGroup;
 			children = (
-				D0B878F21C7B51F900015C9C /* beats_by_coyUITests.swift */,
+				D0B878F21C7B51F900015C9C /* BeatsByCoyUITests.swift */,
 				D0B878F41C7B51F900015C9C /* Info.plist */,
 			);
 			path = "beats-by-coyUITests";
@@ -444,7 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0B878E81C7B51F900015C9C /* beats_by_coyTests.swift in Sources */,
+				D0B878E81C7B51F900015C9C /* BeatsByCoyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0B878F31C7B51F900015C9C /* beats_by_coyUITests.swift in Sources */,
+				D0B878F31C7B51F900015C9C /* BeatsByCoyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
