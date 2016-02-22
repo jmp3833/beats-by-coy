@@ -1,0 +1,777 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D0B878D31C7B51F800015C9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B878D21C7B51F800015C9C /* AppDelegate.swift */; };
+		D0B878D51C7B51F800015C9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B878D41C7B51F800015C9C /* ViewController.swift */; };
+		D0B878D81C7B51F800015C9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B878D61C7B51F800015C9C /* Main.storyboard */; };
+		D0B878DA1C7B51F800015C9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0B878D91C7B51F800015C9C /* Assets.xcassets */; };
+		D0B878DD1C7B51F800015C9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B878DB1C7B51F800015C9C /* LaunchScreen.storyboard */; };
+		D0B878E81C7B51F900015C9C /* beats_by_coyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B878E71C7B51F900015C9C /* beats_by_coyTests.swift */; };
+		D0B878F31C7B51F900015C9C /* beats_by_coyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B878F21C7B51F900015C9C /* beats_by_coyUITests.swift */; };
+		D0B878F81C7B51F900015C9C /* beats-by-coy WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D0B878F71C7B51F900015C9C /* beats-by-coy WatchKit App.app */; };
+		D0B878FE1C7B51F900015C9C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0B878FC1C7B51F900015C9C /* Interface.storyboard */; };
+		D0B879001C7B51F900015C9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0B878FF1C7B51F900015C9C /* Assets.xcassets */; };
+		D0B879071C7B51F900015C9C /* beats-by-coy WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D0B879061C7B51F900015C9C /* beats-by-coy WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D0B8790E1C7B51F900015C9C /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B8790D1C7B51F900015C9C /* InterfaceController.swift */; };
+		D0B879101C7B51F900015C9C /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B8790F1C7B51F900015C9C /* ExtensionDelegate.swift */; };
+		D0B879121C7B51F900015C9C /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B879111C7B51F900015C9C /* NotificationController.swift */; };
+		D0B879141C7B51F900015C9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0B879131C7B51F900015C9C /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D0B878E41C7B51F900015C9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0B878C71C7B51F800015C9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0B878CE1C7B51F800015C9C;
+			remoteInfo = "beats-by-coy";
+		};
+		D0B878EF1C7B51F900015C9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0B878C71C7B51F800015C9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0B878CE1C7B51F800015C9C;
+			remoteInfo = "beats-by-coy";
+		};
+		D0B878F91C7B51F900015C9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0B878C71C7B51F800015C9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0B878F61C7B51F900015C9C;
+			remoteInfo = "beats-by-coy WatchKit App";
+		};
+		D0B879081C7B51F900015C9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0B878C71C7B51F800015C9C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0B879051C7B51F900015C9C;
+			remoteInfo = "beats-by-coy WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D0B8791B1C7B51F900015C9C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D0B879071C7B51F900015C9C /* beats-by-coy WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0B8791F1C7B51F900015C9C /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				D0B878F81C7B51F900015C9C /* beats-by-coy WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D0B878CF1C7B51F800015C9C /* beats-by-coy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "beats-by-coy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0B878D21C7B51F800015C9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D0B878D41C7B51F800015C9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D0B878D71C7B51F800015C9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D0B878D91C7B51F800015C9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0B878DC1C7B51F800015C9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D0B878DE1C7B51F800015C9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0B878E31C7B51F900015C9C /* beats-by-coyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "beats-by-coyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0B878E71C7B51F900015C9C /* beats_by_coyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = beats_by_coyTests.swift; sourceTree = "<group>"; };
+		D0B878E91C7B51F900015C9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0B878EE1C7B51F900015C9C /* beats-by-coyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "beats-by-coyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0B878F21C7B51F900015C9C /* beats_by_coyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = beats_by_coyUITests.swift; sourceTree = "<group>"; };
+		D0B878F41C7B51F900015C9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0B878F71C7B51F900015C9C /* beats-by-coy WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "beats-by-coy WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0B878FD1C7B51F900015C9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		D0B878FF1C7B51F900015C9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0B879011C7B51F900015C9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0B879061C7B51F900015C9C /* beats-by-coy WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "beats-by-coy WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0B8790C1C7B51F900015C9C /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		D0B8790D1C7B51F900015C9C /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		D0B8790F1C7B51F900015C9C /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		D0B879111C7B51F900015C9C /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		D0B879131C7B51F900015C9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0B879151C7B51F900015C9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0B878CC1C7B51F800015C9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0B878E01C7B51F900015C9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0B878EB1C7B51F900015C9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0B879031C7B51F900015C9C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D0B878C61C7B51F800015C9C = {
+			isa = PBXGroup;
+			children = (
+				D0B878D11C7B51F800015C9C /* beats-by-coy */,
+				D0B878E61C7B51F900015C9C /* beats-by-coyTests */,
+				D0B878F11C7B51F900015C9C /* beats-by-coyUITests */,
+				D0B878FB1C7B51F900015C9C /* beats-by-coy WatchKit App */,
+				D0B8790A1C7B51F900015C9C /* beats-by-coy WatchKit Extension */,
+				D0B878D01C7B51F800015C9C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0B878D01C7B51F800015C9C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0B878CF1C7B51F800015C9C /* beats-by-coy.app */,
+				D0B878E31C7B51F900015C9C /* beats-by-coyTests.xctest */,
+				D0B878EE1C7B51F900015C9C /* beats-by-coyUITests.xctest */,
+				D0B878F71C7B51F900015C9C /* beats-by-coy WatchKit App.app */,
+				D0B879061C7B51F900015C9C /* beats-by-coy WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0B878D11C7B51F800015C9C /* beats-by-coy */ = {
+			isa = PBXGroup;
+			children = (
+				D0B878D21C7B51F800015C9C /* AppDelegate.swift */,
+				D0B878D41C7B51F800015C9C /* ViewController.swift */,
+				D0B878D61C7B51F800015C9C /* Main.storyboard */,
+				D0B878D91C7B51F800015C9C /* Assets.xcassets */,
+				D0B878DB1C7B51F800015C9C /* LaunchScreen.storyboard */,
+				D0B878DE1C7B51F800015C9C /* Info.plist */,
+			);
+			path = "beats-by-coy";
+			sourceTree = "<group>";
+		};
+		D0B878E61C7B51F900015C9C /* beats-by-coyTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0B878E71C7B51F900015C9C /* beats_by_coyTests.swift */,
+				D0B878E91C7B51F900015C9C /* Info.plist */,
+			);
+			path = "beats-by-coyTests";
+			sourceTree = "<group>";
+		};
+		D0B878F11C7B51F900015C9C /* beats-by-coyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D0B878F21C7B51F900015C9C /* beats_by_coyUITests.swift */,
+				D0B878F41C7B51F900015C9C /* Info.plist */,
+			);
+			path = "beats-by-coyUITests";
+			sourceTree = "<group>";
+		};
+		D0B878FB1C7B51F900015C9C /* beats-by-coy WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				D0B878FC1C7B51F900015C9C /* Interface.storyboard */,
+				D0B878FF1C7B51F900015C9C /* Assets.xcassets */,
+				D0B879011C7B51F900015C9C /* Info.plist */,
+			);
+			path = "beats-by-coy WatchKit App";
+			sourceTree = "<group>";
+		};
+		D0B8790A1C7B51F900015C9C /* beats-by-coy WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D0B8790D1C7B51F900015C9C /* InterfaceController.swift */,
+				D0B8790F1C7B51F900015C9C /* ExtensionDelegate.swift */,
+				D0B879111C7B51F900015C9C /* NotificationController.swift */,
+				D0B879131C7B51F900015C9C /* Assets.xcassets */,
+				D0B879151C7B51F900015C9C /* Info.plist */,
+				D0B8790B1C7B51F900015C9C /* Supporting Files */,
+			);
+			path = "beats-by-coy WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		D0B8790B1C7B51F900015C9C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D0B8790C1C7B51F900015C9C /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0B878CE1C7B51F800015C9C /* beats-by-coy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0B879201C7B51F900015C9C /* Build configuration list for PBXNativeTarget "beats-by-coy" */;
+			buildPhases = (
+				D0B878CB1C7B51F800015C9C /* Sources */,
+				D0B878CC1C7B51F800015C9C /* Frameworks */,
+				D0B878CD1C7B51F800015C9C /* Resources */,
+				D0B8791F1C7B51F900015C9C /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0B878FA1C7B51F900015C9C /* PBXTargetDependency */,
+			);
+			name = "beats-by-coy";
+			productName = "beats-by-coy";
+			productReference = D0B878CF1C7B51F800015C9C /* beats-by-coy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D0B878E21C7B51F900015C9C /* beats-by-coyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0B879231C7B51F900015C9C /* Build configuration list for PBXNativeTarget "beats-by-coyTests" */;
+			buildPhases = (
+				D0B878DF1C7B51F900015C9C /* Sources */,
+				D0B878E01C7B51F900015C9C /* Frameworks */,
+				D0B878E11C7B51F900015C9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0B878E51C7B51F900015C9C /* PBXTargetDependency */,
+			);
+			name = "beats-by-coyTests";
+			productName = "beats-by-coyTests";
+			productReference = D0B878E31C7B51F900015C9C /* beats-by-coyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D0B878ED1C7B51F900015C9C /* beats-by-coyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0B879261C7B51F900015C9C /* Build configuration list for PBXNativeTarget "beats-by-coyUITests" */;
+			buildPhases = (
+				D0B878EA1C7B51F900015C9C /* Sources */,
+				D0B878EB1C7B51F900015C9C /* Frameworks */,
+				D0B878EC1C7B51F900015C9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0B878F01C7B51F900015C9C /* PBXTargetDependency */,
+			);
+			name = "beats-by-coyUITests";
+			productName = "beats-by-coyUITests";
+			productReference = D0B878EE1C7B51F900015C9C /* beats-by-coyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		D0B878F61C7B51F900015C9C /* beats-by-coy WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0B8791C1C7B51F900015C9C /* Build configuration list for PBXNativeTarget "beats-by-coy WatchKit App" */;
+			buildPhases = (
+				D0B878F51C7B51F900015C9C /* Resources */,
+				D0B8791B1C7B51F900015C9C /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0B879091C7B51F900015C9C /* PBXTargetDependency */,
+			);
+			name = "beats-by-coy WatchKit App";
+			productName = "beats-by-coy WatchKit App";
+			productReference = D0B878F71C7B51F900015C9C /* beats-by-coy WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		D0B879051C7B51F900015C9C /* beats-by-coy WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0B879181C7B51F900015C9C /* Build configuration list for PBXNativeTarget "beats-by-coy WatchKit Extension" */;
+			buildPhases = (
+				D0B879021C7B51F900015C9C /* Sources */,
+				D0B879031C7B51F900015C9C /* Frameworks */,
+				D0B879041C7B51F900015C9C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "beats-by-coy WatchKit Extension";
+			productName = "beats-by-coy WatchKit Extension";
+			productReference = D0B879061C7B51F900015C9C /* beats-by-coy WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0B878C71C7B51F800015C9C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Don't Believe Me, Just Watch";
+				TargetAttributes = {
+					D0B878CE1C7B51F800015C9C = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = J2R83H3T9Z;
+					};
+					D0B878E21C7B51F900015C9C = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = D0B878CE1C7B51F800015C9C;
+					};
+					D0B878ED1C7B51F900015C9C = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = D0B878CE1C7B51F800015C9C;
+					};
+					D0B878F61C7B51F900015C9C = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					D0B879051C7B51F900015C9C = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = D0B878CA1C7B51F800015C9C /* Build configuration list for PBXProject "beats-by-coy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0B878C61C7B51F800015C9C;
+			productRefGroup = D0B878D01C7B51F800015C9C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0B878CE1C7B51F800015C9C /* beats-by-coy */,
+				D0B878E21C7B51F900015C9C /* beats-by-coyTests */,
+				D0B878ED1C7B51F900015C9C /* beats-by-coyUITests */,
+				D0B878F61C7B51F900015C9C /* beats-by-coy WatchKit App */,
+				D0B879051C7B51F900015C9C /* beats-by-coy WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0B878CD1C7B51F800015C9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0B878DD1C7B51F800015C9C /* LaunchScreen.storyboard in Resources */,
+				D0B878DA1C7B51F800015C9C /* Assets.xcassets in Resources */,
+				D0B878D81C7B51F800015C9C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0B878E11C7B51F900015C9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0B878EC1C7B51F900015C9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0B878F51C7B51F900015C9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0B879001C7B51F900015C9C /* Assets.xcassets in Resources */,
+				D0B878FE1C7B51F900015C9C /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0B879041C7B51F900015C9C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0B879141C7B51F900015C9C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0B878CB1C7B51F800015C9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0B878D51C7B51F800015C9C /* ViewController.swift in Sources */,
+				D0B878D31C7B51F800015C9C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0B878DF1C7B51F900015C9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0B878E81C7B51F900015C9C /* beats_by_coyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0B878EA1C7B51F900015C9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0B878F31C7B51F900015C9C /* beats_by_coyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0B879021C7B51F900015C9C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0B879121C7B51F900015C9C /* NotificationController.swift in Sources */,
+				D0B879101C7B51F900015C9C /* ExtensionDelegate.swift in Sources */,
+				D0B8790E1C7B51F900015C9C /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D0B878E51C7B51F900015C9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0B878CE1C7B51F800015C9C /* beats-by-coy */;
+			targetProxy = D0B878E41C7B51F900015C9C /* PBXContainerItemProxy */;
+		};
+		D0B878F01C7B51F900015C9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0B878CE1C7B51F800015C9C /* beats-by-coy */;
+			targetProxy = D0B878EF1C7B51F900015C9C /* PBXContainerItemProxy */;
+		};
+		D0B878FA1C7B51F900015C9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0B878F61C7B51F900015C9C /* beats-by-coy WatchKit App */;
+			targetProxy = D0B878F91C7B51F900015C9C /* PBXContainerItemProxy */;
+		};
+		D0B879091C7B51F900015C9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0B879051C7B51F900015C9C /* beats-by-coy WatchKit Extension */;
+			targetProxy = D0B879081C7B51F900015C9C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D0B878D61C7B51F800015C9C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0B878D71C7B51F800015C9C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D0B878DB1C7B51F800015C9C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0B878DC1C7B51F800015C9C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D0B878FC1C7B51F900015C9C /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0B878FD1C7B51F900015C9C /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D0B879161C7B51F900015C9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D0B879171C7B51F900015C9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0B879191C7B51F900015C9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "beats-by-coy WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coy.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		D0B8791A1C7B51F900015C9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "beats-by-coy WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coy.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		D0B8791D1C7B51F900015C9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = beats_by_coy_WatchKit_Extension;
+				INFOPLIST_FILE = "beats-by-coy WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coy.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		D0B8791E1C7B51F900015C9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = beats_by_coy_WatchKit_Extension;
+				INFOPLIST_FILE = "beats-by-coy WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coy.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		D0B879211C7B51F900015C9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "beats-by-coy/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		D0B879221C7B51F900015C9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "beats-by-coy/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coy";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		D0B879241C7B51F900015C9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "beats-by-coyTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/beats-by-coy.app/beats-by-coy";
+			};
+			name = Debug;
+		};
+		D0B879251C7B51F900015C9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "beats-by-coyTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coyTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/beats-by-coy.app/beats-by-coy";
+			};
+			name = Release;
+		};
+		D0B879271C7B51F900015C9C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "beats-by-coyUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coyUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "beats-by-coy";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		D0B879281C7B51F900015C9C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "beats-by-coyUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coyUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "beats-by-coy";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0B878CA1C7B51F800015C9C /* Build configuration list for PBXProject "beats-by-coy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0B879161C7B51F900015C9C /* Debug */,
+				D0B879171C7B51F900015C9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0B879181C7B51F900015C9C /* Build configuration list for PBXNativeTarget "beats-by-coy WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0B879191C7B51F900015C9C /* Debug */,
+				D0B8791A1C7B51F900015C9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D0B8791C1C7B51F900015C9C /* Build configuration list for PBXNativeTarget "beats-by-coy WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0B8791D1C7B51F900015C9C /* Debug */,
+				D0B8791E1C7B51F900015C9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D0B879201C7B51F900015C9C /* Build configuration list for PBXNativeTarget "beats-by-coy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0B879211C7B51F900015C9C /* Debug */,
+				D0B879221C7B51F900015C9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D0B879231C7B51F900015C9C /* Build configuration list for PBXNativeTarget "beats-by-coyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0B879241C7B51F900015C9C /* Debug */,
+				D0B879251C7B51F900015C9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D0B879261C7B51F900015C9C /* Build configuration list for PBXNativeTarget "beats-by-coyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0B879271C7B51F900015C9C /* Debug */,
+				D0B879281C7B51F900015C9C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0B878C71C7B51F800015C9C /* Project object */;
+}
