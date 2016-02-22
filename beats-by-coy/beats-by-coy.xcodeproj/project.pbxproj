@@ -236,6 +236,7 @@
 				D0B878CC1C7B51F800015C9C /* Frameworks */,
 				D0B878CD1C7B51F800015C9C /* Resources */,
 				D0B8791F1C7B51F900015C9C /* Embed Watch Content */,
+				9928AEDE1C7B8200000E8F34 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -412,6 +413,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9928AEDE1C7B8200000E8F34 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D0B878CB1C7B51F800015C9C /* Sources */ = {
@@ -738,6 +755,7 @@
 				D0B8791A1C7B51F900015C9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0B8791C1C7B51F900015C9C /* Build configuration list for PBXNativeTarget "beats-by-coy WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -746,6 +764,7 @@
 				D0B8791E1C7B51F900015C9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0B879201C7B51F900015C9C /* Build configuration list for PBXNativeTarget "beats-by-coy" */ = {
 			isa = XCConfigurationList;
@@ -754,6 +773,7 @@
 				D0B879221C7B51F900015C9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0B879231C7B51F900015C9C /* Build configuration list for PBXNativeTarget "beats-by-coyTests" */ = {
 			isa = XCConfigurationList;
@@ -762,6 +782,7 @@
 				D0B879251C7B51F900015C9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0B879261C7B51F900015C9C /* Build configuration list for PBXNativeTarget "beats-by-coyUITests" */ = {
 			isa = XCConfigurationList;
@@ -770,6 +791,7 @@
 				D0B879281C7B51F900015C9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
