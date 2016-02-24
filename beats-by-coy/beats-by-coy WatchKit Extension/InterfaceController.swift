@@ -14,7 +14,7 @@ import WatchConnectivity
 class InterfaceController: WKInterfaceController, WCSessionDelegate{
 
     @IBOutlet var tempoLabel: WKInterfaceLabel!
-    var metronomeTimer: NSTimer!
+    var metronomeTimer: NSTimer? = nil
     var session : WCSession!
     var metronomeIsOn = false
     var tempo: NSTimeInterval = 80 {
@@ -56,18 +56,17 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
         else {
             // Mark the metronome as on.
             metronomeIsOn = true
-            
             // Start the metronome.
             let metronomeTimeInterval:NSTimeInterval = 60.0 / tempo
             print(metronomeTimeInterval)
-            metronomeTimer = NSTimer.scheduledTimerWithTimeInterval(metronomeTimeInterval, target: self, selector: Selector("playMetronomeVibration"), userInfo: nil, repeats: true)
-          //  metronomeTimer?.fire()
-            // Change the toggle metronome button's image to "Stop" and tint
+            dispatch_async(dispatch_get_main_queue()){
+                self.metronomeTimer = NSTimer.scheduledTimerWithTimeInterval(metronomeTimeInterval, target: self, selector: Selector("playMetronomeVibration"), userInfo: nil, repeats: true)
+            }
         }
     }
     
     func playMetronomeVibration(){
-       // WKInterfaceDevice.currentDevice().playHaptic(.Click)
+        WKInterfaceDevice.currentDevice().playHaptic(.Click)
         print("buzz")
     }
     
