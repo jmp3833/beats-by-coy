@@ -17,7 +17,7 @@ class MetronomeViewController: UIViewController, WCSessionDelegate {
     override func viewDidLoad() {
         if (WCSession.isSupported()) {
             session = WCSession.defaultSession()
-            session.delegate = self;
+            session.delegate = self
             session.activateSession()
         }
         self.session.sendMessage(["ChangeTempo": Double(tempoTextField.text!)!], replyHandler: { (response) -> Void in
@@ -37,8 +37,5 @@ class MetronomeViewController: UIViewController, WCSessionDelegate {
                 print(error)
         })
 
-    }
-    @IBAction func hilhill(sender: AnyObject) {
-        var fuck = "fuck"
     }
 }
