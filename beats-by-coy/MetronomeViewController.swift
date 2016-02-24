@@ -38,7 +38,4 @@ class MetronomeViewController: UIViewController, WCSessionDelegate {
         })
 
     }
-    @IBAction func hilhill(sender: AnyObject) {
-        var fuck = "fuck"
-    }
 }
