@@ -6,8 +6,8 @@ branches:
 
 xcode_project: Swifternalization.xcodeproj
 xcode_scheme: SwifternalizationTests
-osx_image: beta-xcode6.3
 xcode_sdk: iphonesimulator8.3 
 
 script:
 - xcodebuild clean build test -project Swifternalization.xcodeproj -scheme SwifternalizationTests
+
