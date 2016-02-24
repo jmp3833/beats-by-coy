@@ -44,24 +44,25 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
         super.didDeactivate()
     }
     
-    func toggleMetronome(){
+    func stopMetronome(){
         if metronomeIsOn {
-            // Mark the metronome as off.
             metronomeIsOn = false
-            
-            // Stop the metronome.
             metronomeTimer?.invalidate()
         }
+    }
+    
+    func startMetronome(){
+        if metronomeIsOn {
+
+            metronomeTimer?.invalidate()
             
-        else {
-            // Mark the metronome as on.
-            metronomeIsOn = true
-            // Start the metronome.
-            let metronomeTimeInterval:NSTimeInterval = 60.0 / tempo
-            print(metronomeTimeInterval)
-            dispatch_async(dispatch_get_main_queue()){
-                self.metronomeTimer = NSTimer.scheduledTimerWithTimeInterval(metronomeTimeInterval, target: self, selector: Selector("playMetronomeVibration"), userInfo: nil, repeats: true)
-            }
+        }
+        metronomeIsOn = true
+        // Start the metronome.
+        let metronomeTimeInterval:NSTimeInterval = 60.0 / tempo
+        print(metronomeTimeInterval)
+        dispatch_async(dispatch_get_main_queue()){
+            self.metronomeTimer = NSTimer.scheduledTimerWithTimeInterval(metronomeTimeInterval, target: self, selector: Selector("playMetronomeVibration"), userInfo: nil, repeats: true)
         }
     }
     
@@ -81,7 +82,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
         else if message["StartMetronome"] != nil{
             self.tempo = message["StartMetronome"] as! Double
             self.tempoLabel.setText(String(format: "%.0f", self.tempo))
-            toggleMetronome()
+            startMetronome()
+        }
+        else if message["StopMetronome"] != nil{
+            stopMetronome()
         }
     }
 }
