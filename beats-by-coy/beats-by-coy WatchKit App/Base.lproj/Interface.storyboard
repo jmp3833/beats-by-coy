@@ -12,7 +12,7 @@
                     <items>
                         <group width="1" alignment="left" verticalAlignment="center" id="LAe-81-SJY">
                             <items>
-                                <label alignment="center" verticalAlignment="center" text="80" id="ua5-Xf-7TF"/>
+                                <label width="19.5" alignment="center" verticalAlignment="center" text="80" id="ua5-Xf-7TF"/>
                                 <label width="67" alignment="right" text="BPM" id="9XY-p3-p7q"/>
                             </items>
                         </group>

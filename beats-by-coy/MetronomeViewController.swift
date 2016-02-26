@@ -31,11 +31,16 @@ class MetronomeViewController: UIViewController, WCSessionDelegate {
                 print(error)
         })
     }
+    @IBAction func stopMetronome(sender: AnyObject) {
+        self.session.sendMessage(["StopMetronome": Double(tempoTextField.text!)!], replyHandler: { (response) -> Void in
+            }, errorHandler: { (error) -> Void in
+                print(error)
+        })
+    }
     @IBAction func tempoChanged(sender: AnyObject) {
         self.session.sendMessage(["ChangeTempo": Double(tempoTextField.text!)!], replyHandler: { (response) -> Void in
             }, errorHandler: { (error) -> Void in
                 print(error)
         })
-
     }
 }

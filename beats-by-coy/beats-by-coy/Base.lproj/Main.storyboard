@@ -36,11 +36,20 @@
                                     <action selector="startMetronome:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Adg-8l-75E"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcW-Q1-EWi">
+                                <rect key="frame" x="284" y="302" width="32" height="30"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopMetronome:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uok-Ho-4ZQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="lcW-Q1-EWi" firstAttribute="top" secondItem="k7m-Jy-gJJ" secondAttribute="bottom" constant="17" id="8NY-u2-ell"/>
                             <constraint firstItem="k7m-Jy-gJJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qbd-el-m1x"/>
                             <constraint firstItem="k7m-Jy-gJJ" firstAttribute="top" secondItem="heU-SC-2JT" secondAttribute="bottom" constant="43" id="f5x-EY-zXV"/>
+                            <constraint firstItem="lcW-Q1-EWi" firstAttribute="centerX" secondItem="k7m-Jy-gJJ" secondAttribute="centerX" id="ocV-GK-13r"/>
                             <constraint firstItem="heU-SC-2JT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="162" id="tZs-7H-UKR"/>
                             <constraint firstItem="heU-SC-2JT" firstAttribute="centerX" secondItem="k7m-Jy-gJJ" secondAttribute="centerX" id="x1z-Gy-S4U"/>
                         </constraints>
