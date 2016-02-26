@@ -17,6 +17,14 @@
                             </items>
                         </group>
                     </items>
+                    <menu key="menu" id="neA-v9-l8B">
+                        <items>
+                            <menuItem title="Sync" id="l4j-2F-G5G"/>
+                            <menuItem title="Subdivide" id="iMc-sa-q7z"/>
+                            <menuItem title="Signature" id="ctD-BD-a1z"/>
+                            <menuItem title="Volume" icon="speaker" id="UzW-bf-dtx"/>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="tempoLabel" destination="ua5-Xf-7TF" id="pBm-C5-FEz"/>
                     </connections>
