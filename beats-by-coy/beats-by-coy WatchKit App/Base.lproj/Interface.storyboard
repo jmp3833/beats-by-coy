@@ -48,21 +48,6 @@
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
-        <!--Sync Screen-->
-        <scene sceneID="egC-iW-s0x">
-            <objects>
-                <controller identifier="Sync Screen" id="zpU-y7-7en" customClass="InterfaceController" customModule="beats_by_coy_WatchKit_App" customModuleProvider="target">
-                    <items>
-                        <group width="1" alignment="left" verticalAlignment="center" id="vWw-5j-toR">
-                            <items>
-                                <label alignment="left" text="Sync Screen" id="vGn-IE-ys0"/>
-                            </items>
-                        </group>
-                    </items>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="220" y="345"/>
-        </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
             <objects>
@@ -85,6 +70,62 @@
                 <controller id="4sK-HA-Art" customClass="NotificationController" customModule="beats_by_coy_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--SyncController-->
+        <scene sceneID="F86-ty-fbz">
+            <objects>
+                <controller identifier="SyncController" id="Hv1-Z4-Fsh" userLabel="SyncController">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="center" id="vWw-5j-toR">
+                            <items>
+                                <label alignment="left" text="Sync Screen" id="vGn-IE-ys0"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+        </scene>
+        <!--SubdivideController-->
+        <scene sceneID="HvD-AS-BlR">
+            <objects>
+                <controller identifier="SubdivideController" id="kmz-RG-xzf" userLabel="SubdivideController">
+                    <items>
+                        <group width="1" alignment="left" id="ltg-8t-TUA">
+                            <items>
+                                <label alignment="left" text="Subdivide Screen" id="dxe-Vz-MwW"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+        </scene>
+        <!--SignatureController-->
+        <scene sceneID="ssi-Be-7k1">
+            <objects>
+                <controller identifier="SignatureController" id="eum-Nm-Gj2" userLabel="SignatureController">
+                    <items>
+                        <group width="1" alignment="left" id="kGK-bg-AaM">
+                            <items>
+                                <label alignment="left" text="Signature view" id="MAF-Oa-kQ5"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+        </scene>
+        <!--VolumeController-->
+        <scene sceneID="aUf-04-8ue">
+            <objects>
+                <controller identifier="VolumeController" id="b1H-LA-SuI" userLabel="VolumeController">
+                    <items>
+                        <group width="1" alignment="left" id="OnT-1l-VJ7">
+                            <items>
+                                <label alignment="left" text="Volume screen" id="svn-Dk-CgT"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
         </scene>
     </scenes>
 </document>

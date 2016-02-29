@@ -32,28 +32,28 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
     * Send watch to sync screen
     */
     @IBAction func syncMenuActivate() {
-    
+        pushControllerWithName("SyncController", context: nil)
     }
     
     /*
     * Send watch to subdivide screen
     */
     @IBAction func subdivideMenuActivate() {
-        
+        pushControllerWithName("SubdivideController", context: nil)
     }
     
     /*
     * Send watch to signature screen
     */
     @IBAction func signatureMenuActivate() {
-        
+        pushControllerWithName("SignatureController", context: nil)
     }
     
     /*
     * Send watch to volume screen
     */
     @IBAction func volumeMenuActivate() {
-        
+        pushControllerWithName("VolumeController", context: nil)
     }
 
     override func willActivate() {
