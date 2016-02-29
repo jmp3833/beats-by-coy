@@ -1,14 +1,65 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6724" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Main Menu-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller title="Main Menu" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="beats_by_coy_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="center" id="LAe-81-SJY">
+                            <items>
+                                <label width="19.5" alignment="center" verticalAlignment="center" text="80" id="ua5-Xf-7TF"/>
+                                <label width="67" alignment="right" text="BPM" id="9XY-p3-p7q"/>
+                            </items>
+                        </group>
+                    </items>
+                    <menu key="menu" id="neA-v9-l8B">
+                        <items>
+                            <menuItem title="Sync" icon="info" id="l4j-2F-G5G">
+                                <connections>
+                                    <action selector="syncMenuActivate" destination="AgC-eL-Hgc" id="xxg-Lh-mbH"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Subdivide" icon="play" id="iMc-sa-q7z">
+                                <connections>
+                                    <action selector="subdivideMenuActivate" destination="AgC-eL-Hgc" id="T1i-1Z-lbN"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Signature" icon="mute" id="ctD-BD-a1z">
+                                <connections>
+                                    <action selector="signatureMenuActivate" destination="AgC-eL-Hgc" id="MxR-up-31c"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Volume" icon="speaker" id="UzW-bf-dtx">
+                                <connections>
+                                    <action selector="volumeMenuActivate" destination="AgC-eL-Hgc" id="UME-rA-gtT"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="tempoLabel" destination="ua5-Xf-7TF" id="pBm-C5-FEz"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Sync Screen-->
+        <scene sceneID="egC-iW-s0x">
+            <objects>
+                <controller identifier="Sync Screen" id="zpU-y7-7en" customClass="InterfaceController" customModule="beats_by_coy_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="center" id="vWw-5j-toR">
+                            <items>
+                                <label alignment="left" text="Sync Screen" id="vGn-IE-ys0"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
@@ -31,7 +82,7 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="beats_by_coy_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
