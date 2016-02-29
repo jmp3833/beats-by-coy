@@ -1,3 +1,2 @@
 language: objective-c  #1
-xcode_project: beats-by-coy.xcodeproj #3
-xcode_scheme: beats-by-coy #4
+script: xctool -project beats-by-coy/beats-by-coy.xcodeproj -scheme beats-by-coy clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
