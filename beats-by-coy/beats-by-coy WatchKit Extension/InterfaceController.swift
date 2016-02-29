@@ -40,6 +40,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
     * Send watch to subdivide screen
     */
     @IBAction func subdivideMenuActivate() {
+        
     }
     
     /*

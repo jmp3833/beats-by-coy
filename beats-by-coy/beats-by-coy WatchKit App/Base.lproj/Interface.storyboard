@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Main Menu-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="beats_by_coy_WatchKit_App" customModuleProvider="target">
+                <controller title="Main Menu" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="beats_by_coy_WatchKit_App" customModuleProvider="target">
                     <items>
                         <group width="1" alignment="left" verticalAlignment="center" id="LAe-81-SJY">
                             <items>
@@ -44,6 +44,21 @@
                     <connections>
                         <outlet property="tempoLabel" destination="ua5-Xf-7TF" id="pBm-C5-FEz"/>
                     </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Sync Screen-->
+        <scene sceneID="egC-iW-s0x">
+            <objects>
+                <controller identifier="Sync Screen" id="zpU-y7-7en" customClass="InterfaceController" customModule="beats_by_coy_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="center" id="vWw-5j-toR">
+                            <items>
+                                <label alignment="left" text="Sync Screen" id="vGn-IE-ys0"/>
+                            </items>
+                        </group>
+                    </items>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
