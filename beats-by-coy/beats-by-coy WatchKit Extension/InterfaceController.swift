@@ -27,6 +27,34 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
         super.awakeWithContext(context)
         // Configure interface objects here.
     }
+    
+    /*
+    * Send watch to sync screen
+    */
+    @IBAction func syncMenuActivate() {
+    
+    }
+    
+    /*
+    * Send watch to subdivide screen
+    */
+    @IBAction func subdivideMenuActivate() {
+        
+    }
+    
+    /*
+    * Send watch to signature screen
+    */
+    @IBAction func signatureMenuActivate() {
+        
+    }
+    
+    /*
+    * Send watch to volume screen
+    */
+    @IBAction func volumeMenuActivate() {
+        
+    }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
@@ -87,4 +115,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
             stopMetronome()
         }
     }
+    
+    
 }
