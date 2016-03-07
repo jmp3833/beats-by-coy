@@ -14,6 +14,8 @@ import WatchConnectivity
 class InterfaceController: WKInterfaceController, WCSessionDelegate{
 
     @IBOutlet var tempoLabel: WKInterfaceLabel!
+    @IBOutlet var bpmPicker: WKInterfacePicker!
+    
     var metronomeTimer: NSTimer? = nil
     var session : WCSession!
     var metronomeIsOn = false
@@ -23,9 +25,18 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
         }
     }
     
+    func createPickerItem(n: integer_t) -> WKPickerItem {
+        let pickerItem = WKPickerItem()
+        pickerItem.title = String(n)
+        pickerItem.caption = String(n)
+        return pickerItem
+    }
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         // Configure interface objects here.
+        bpmPicker.setItems((10...120).map(createPickerItem))
+        bpmPicker.setSelectedItemIndex(70)
     }
     
     /*

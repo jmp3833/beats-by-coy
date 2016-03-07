@@ -10,10 +10,10 @@
             <objects>
                 <controller title="Main Menu" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="beats_by_coy_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group width="1" alignment="left" verticalAlignment="center" id="LAe-81-SJY">
+                        <group width="1" alignment="center" verticalAlignment="center" id="4pb-xP-eaB">
                             <items>
-                                <label width="19.5" alignment="center" verticalAlignment="center" text="80" id="ua5-Xf-7TF"/>
-                                <label width="67" alignment="right" text="BPM" id="9XY-p3-p7q"/>
+                                <picker width="42" height="100" alignment="right" id="nNs-uL-RgH"/>
+                                <label width="71" alignment="right" verticalAlignment="center" text="BPM" id="9XY-p3-p7q"/>
                             </items>
                         </group>
                     </items>
@@ -42,7 +42,7 @@
                         </items>
                     </menu>
                     <connections>
-                        <outlet property="tempoLabel" destination="ua5-Xf-7TF" id="pBm-C5-FEz"/>
+                        <outlet property="bpmPicker" destination="nNs-uL-RgH" id="cuF-CH-RMA"/>
                     </connections>
                 </controller>
             </objects>
