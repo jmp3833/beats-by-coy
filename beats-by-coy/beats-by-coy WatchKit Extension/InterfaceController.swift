@@ -21,7 +21,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
     var countingDown = false
     var tempo: NSTimeInterval = 80 {
         didSet {
-            tempoLabel.setText(String(format: "%.0f", tempo))
+
         }
     }
     
@@ -131,12 +131,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
             dispatch_async(dispatch_get_main_queue()) {
                 //score stuff update
                 self.tempo = message["ChangeTempo"] as! Double
-                self.tempoLabel.setText(String(format: "%.0f", self.tempo))
             }
         }
         else if message["StartMetronome"] != nil{
             self.tempo = message["StartMetronome"] as! Double
-            self.tempoLabel.setText(String(format: "%.0f", self.tempo))
             startMetronome()
         }
         else if message["StopMetronome"] != nil{
