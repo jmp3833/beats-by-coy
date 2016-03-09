@@ -17,11 +17,13 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
     @IBOutlet var bpmPicker: WKInterfacePicker!
     
     var metronomeTimer: NSTimer? = nil
+    var countdownTimer: NSTimer? = nil
     var session : WCSession!
     var metronomeIsOn = false
+    var countingDown = false
     var tempo: NSTimeInterval = 80 {
         didSet {
-            tempoLabel.setText(String(format: "%.0f", tempo))
+
         }
     }
     
@@ -95,12 +97,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
             metronomeTimer?.invalidate()
             
         }
-        metronomeIsOn = true
-        // Start the metronome.
-        let metronomeTimeInterval:NSTimeInterval = 60.0 / tempo
-        print(metronomeTimeInterval)
-        dispatch_async(dispatch_get_main_queue()){
-            self.metronomeTimer = NSTimer.scheduledTimerWithTimeInterval(metronomeTimeInterval, target: self, selector: Selector("playMetronomeVibration"), userInfo: nil, repeats: true)
+        
+        // Start countdown
+        dispatch_sync(dispatch_get_main_queue()){
+            self.startCountdown()
         }
     }
     
@@ -109,17 +109,43 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
         print("buzz")
     }
     
+    func startCountdown() -> Void {
+        self.countingDown = true
+        let seconds = 5;
+        self.countdown(seconds)
+    }
+    
+    func countdown(seconds: Int){
+        
+        // Update UILabel
+        if (seconds == 0) {
+            self.countingDown = false
+            print("Metronome starting.")
+            metronomeIsOn = true
+            // Start the metronome.
+            let metronomeTimeInterval:NSTimeInterval = 60.0 / tempo
+            print(metronomeTimeInterval)
+            dispatch_async(dispatch_get_main_queue()){
+                self.metronomeTimer = NSTimer.scheduledTimerWithTimeInterval(metronomeTimeInterval, target: self, selector: Selector("playMetronomeVibration"), userInfo: nil, repeats: true)
+            }
+            return
+        }
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
+            print("Metronome starting in: \(seconds)")
+            self.countdown(seconds - 1)
+            }
+    }
+    
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
         if message["ChangeTempo"] != nil{
             dispatch_async(dispatch_get_main_queue()) {
                 //score stuff update
                 self.tempo = message["ChangeTempo"] as! Double
-                self.tempoLabel.setText(String(format: "%.0f", self.tempo))
             }
         }
         else if message["StartMetronome"] != nil{
             self.tempo = message["StartMetronome"] as! Double
-            self.tempoLabel.setText(String(format: "%.0f", self.tempo))
             startMetronome()
         }
         else if message["StopMetronome"] != nil{
