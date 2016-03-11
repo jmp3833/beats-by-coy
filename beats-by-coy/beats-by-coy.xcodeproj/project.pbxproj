@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		092864FC1C9342F6006CD467 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092864FB1C9342F6006CD467 /* SettingsController.swift */; };
 		ADAD892E1C7B8EF1003094DC /* MetronomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAD892D1C7B8EF1003094DC /* MetronomeViewController.swift */; };
 		D0B878D31C7B51F800015C9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B878D21C7B51F800015C9C /* AppDelegate.swift */; };
 		D0B878D51C7B51F800015C9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B878D41C7B51F800015C9C /* ViewController.swift */; };
@@ -82,6 +83,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		092864FB1C9342F6006CD467 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		ADAD892D1C7B8EF1003094DC /* MetronomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MetronomeViewController.swift; path = ../MetronomeViewController.swift; sourceTree = "<group>"; };
 		D0B878CF1C7B51F800015C9C /* beats-by-coy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "beats-by-coy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B878D21C7B51F800015C9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				D0B879131C7B51F900015C9C /* Assets.xcassets */,
 				D0B879151C7B51F900015C9C /* Info.plist */,
 				D0B8790B1C7B51F900015C9C /* Supporting Files */,
+				092864FB1C9342F6006CD467 /* SettingsController.swift */,
 			);
 			path = "beats-by-coy WatchKit Extension";
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092864FC1C9342F6006CD467 /* SettingsController.swift in Sources */,
 				D0B879121C7B51F900015C9C /* NotificationController.swift in Sources */,
 				D0B879101C7B51F900015C9C /* ExtensionDelegate.swift in Sources */,
 				D0B8790E1C7B51F900015C9C /* InterfaceController.swift in Sources */,

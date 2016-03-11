@@ -5,11 +5,86 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
     <scenes>
+        <!--Settings-->
+        <scene sceneID="WFc-jV-Nmx">
+            <objects>
+                <controller identifier="SettingsController" id="t3W-uv-rna" customClass="SettingsController" customModule="beats_by_coy_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="100" alignment="center" layout="vertical" id="YkO-gR-ni2">
+                            <items>
+                                <label width="100" alignment="center" text="Countdown Time" textAlignment="center" id="UXA-NI-ZiM">
+                                    <variation key="device=watch42mm" width="156"/>
+                                </label>
+                                <group width="1" alignment="center" id="5mo-nq-t0w">
+                                    <items>
+                                        <button width="30" alignment="left" title="-" id="CUA-mD-vGV">
+                                            <connections>
+                                                <action selector="countdownMinus" destination="t3W-uv-rna" id="mhl-ro-dW5"/>
+                                            </connections>
+                                        </button>
+                                        <label width="50" height="100" alignment="center" text="5" textAlignment="center" id="uiY-wl-AYx">
+                                            <variation key="device=watch42mm" height="35.5"/>
+                                        </label>
+                                        <button width="30" alignment="right" title="+" id="UJJ-mt-JyN">
+                                            <connections>
+                                                <action selector="countdownPlus" destination="t3W-uv-rna" id="iL5-ZT-trL"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                    <variation key="default">
+                                        <mask key="items">
+                                            <exclude reference="CUA-mD-vGV"/>
+                                            <exclude reference="UJJ-mt-JyN"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="device=watch42mm">
+                                        <mask key="items">
+                                            <include reference="CUA-mD-vGV"/>
+                                            <include reference="uiY-wl-AYx"/>
+                                            <include reference="UJJ-mt-JyN"/>
+                                        </mask>
+                                    </variation>
+                                </group>
+                            </items>
+                            <variation key="default">
+                                <mask key="items">
+                                    <exclude reference="5mo-nq-t0w"/>
+                                </mask>
+                            </variation>
+                            <variation key="device=watch42mm" height="128.5">
+                                <mask key="items">
+                                    <include reference="5mo-nq-t0w"/>
+                                </mask>
+                            </variation>
+                        </group>
+                    </items>
+                    <variation key="default">
+                        <mask key="items">
+                            <exclude reference="YkO-gR-ni2"/>
+                        </mask>
+                    </variation>
+                    <variation key="device=watch42mm" title="Settings">
+                        <mask key="items">
+                            <include reference="YkO-gR-ni2"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <outlet property="countdownSettingLabel" destination="uiY-wl-AYx" id="cTc-kQ-a3F"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="112.46153846153847" y="30.948717948717952"/>
+        </scene>
         <!--Main Menu-->
         <scene sceneID="aou-V4-d1y">
             <objects>
                 <controller title="Main Menu" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="beats_by_coy_WatchKit_App" customModuleProvider="target">
                     <items>
+                        <label width="136" alignment="left" text="Countdown" textAlignment="center" id="uam-tN-wKZ">
+                            <variation key="device=watch42mm" width="156">
+                                <nil key="text"/>
+                            </variation>
+                        </label>
                         <group width="1" alignment="center" verticalAlignment="center" id="4pb-xP-eaB">
                             <items>
                                 <picker width="42" height="100" alignment="right" id="nNs-uL-RgH"/>
@@ -24,9 +99,9 @@
                                     <action selector="syncMenuActivate" destination="AgC-eL-Hgc" id="xxg-Lh-mbH"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Subdivide" icon="play" id="iMc-sa-q7z">
+                            <menuItem title="Settings" icon="info" id="iMc-sa-q7z">
                                 <connections>
-                                    <action selector="subdivideMenuActivate" destination="AgC-eL-Hgc" id="T1i-1Z-lbN"/>
+                                    <action selector="settingsMenuActivate" destination="AgC-eL-Hgc" id="ueX-il-Qqg"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Signature" icon="mute" id="ctD-BD-a1z">
@@ -43,10 +118,11 @@
                     </menu>
                     <connections>
                         <outlet property="bpmPicker" destination="nNs-uL-RgH" id="cuF-CH-RMA"/>
+                        <outlet property="countdownLabel" destination="uam-tN-wKZ" id="k6c-aK-Gv9"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="1.7435897435897436" y="286.38461538461542"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -79,20 +155,6 @@
                         <group width="1" alignment="left" verticalAlignment="center" id="vWw-5j-toR">
                             <items>
                                 <label alignment="left" text="Sync Screen" id="vGn-IE-ys0"/>
-                            </items>
-                        </group>
-                    </items>
-                </controller>
-            </objects>
-        </scene>
-        <!--SubdivideController-->
-        <scene sceneID="HvD-AS-BlR">
-            <objects>
-                <controller identifier="SubdivideController" id="kmz-RG-xzf" userLabel="SubdivideController">
-                    <items>
-                        <group width="1" alignment="left" id="ltg-8t-TUA">
-                            <items>
-                                <label alignment="left" text="Subdivide Screen" id="dxe-Vz-MwW"/>
                             </items>
                         </group>
                     </items>
