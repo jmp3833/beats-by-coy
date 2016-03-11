@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
     <scenes>
-        <!--Settings-->
+        <!--SettingsController-->
         <scene sceneID="WFc-jV-Nmx">
             <objects>
                 <controller identifier="SettingsController" id="t3W-uv-rna" customClass="SettingsController" customModule="beats_by_coy_WatchKit_Extension">
@@ -160,6 +160,17 @@
                     </items>
                 </controller>
             </objects>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="iaK-Uu-3w2">
+            <objects>
+                <controller id="dnq-GJ-GiW">
+                    <items>
+                        <picker height="100" alignment="left" id="lFW-sG-v8g"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="463" y="122"/>
         </scene>
         <!--SignatureController-->
         <scene sceneID="ssi-Be-7k1">
