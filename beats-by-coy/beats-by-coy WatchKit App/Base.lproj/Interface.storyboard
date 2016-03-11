@@ -87,7 +87,11 @@
                         </label>
                         <group width="1" alignment="center" verticalAlignment="center" id="4pb-xP-eaB">
                             <items>
-                                <picker width="42" height="100" alignment="right" id="nNs-uL-RgH"/>
+                                <picker width="42" height="100" alignment="right" id="nNs-uL-RgH">
+                                    <connections>
+                                        <action selector="bpmPickerChanged:" destination="AgC-eL-Hgc" id="GzB-K7-PDy"/>
+                                    </connections>
+                                </picker>
                                 <label width="71" alignment="right" verticalAlignment="center" text="BPM" id="9XY-p3-p7q"/>
                             </items>
                         </group>
