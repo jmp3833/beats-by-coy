@@ -148,9 +148,9 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
             return
         }
         
+        print("Metronome starting in: \(seconds)")
+        self.countdownLabel.setText("\(seconds)")
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
-            print("Metronome starting in: \(seconds)")
-            self.countdownLabel.setText("\(seconds)")
             self.countdown(seconds - 1)
             }
     }
