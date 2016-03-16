@@ -39,6 +39,8 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
         // Configure interface objects here.
         bpmPicker.setItems((10...120).map(createPickerItem))
         bpmPicker.setSelectedItemIndex(70)
+        
+        
     }
     
     /*
