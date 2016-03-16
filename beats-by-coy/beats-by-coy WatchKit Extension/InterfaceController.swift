@@ -15,6 +15,8 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
 
     @IBOutlet var tempoLabel: WKInterfaceLabel!
     @IBOutlet var bpmPicker: WKInterfacePicker!
+    @IBOutlet var countdownLabel: WKInterfaceLabel!
+
     
     var metronomeTimer: NSTimer? = nil
     var countdownTimer: NSTimer? = nil
@@ -38,9 +40,15 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
         super.awakeWithContext(context)
         // Configure interface objects here.
         bpmPicker.setItems((10...120).map(createPickerItem))
-        bpmPicker.setSelectedItemIndex(70)
         
+        let defaults = NSUserDefaults.standardUserDefaults()
         
+        if (defaults.valueForKey("BPM") != nil) {
+            let index = Int(defaults.stringForKey("BPM")!)
+            bpmPicker.setSelectedItemIndex(index!)
+        } else {
+            bpmPicker.setSelectedItemIndex(70)
+        }
     }
     
     /*
@@ -51,10 +59,11 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
     }
     
     /*
-    * Send watch to subdivide screen
+    * Send watch to sudbdivide screen
     */
-    @IBAction func subdivideMenuActivate() {
-        pushControllerWithName("SubdivideController", context: nil)
+    @IBAction func settingsMenuActivate() {
+        pushControllerWithName("SettingsController", context: nil)
+        
     }
     
     /*
@@ -62,6 +71,13 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
     */
     @IBAction func signatureMenuActivate() {
         pushControllerWithName("SignatureController", context: nil)
+    }
+    
+    @IBAction func bpmPickerChanged(value: Int) {
+        // Save BPM in settings
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        defaults.setValue(value, forKey: "BPM")
     }
     
     /*
@@ -89,6 +105,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
     func stopMetronome(){
         if metronomeIsOn {
             metronomeIsOn = false
+            self.countdownLabel.setText("Metronome Stopped")
             metronomeTimer?.invalidate()
         }
     }
@@ -112,9 +129,21 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
     }
     
     func startCountdown() -> Void {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if ((defaults.valueForKey("Countdown")) != nil) {
+            let seconds = Int(defaults.stringForKey("Countdown")!)
+            self.countdown(seconds!)
+        } else {
+            let seconds = 5
+            // TODO: This needs to be initially set when the app is first launched for a user
+            defaults.setValue(seconds, forKey: "Countdown")
+            self.countdown(seconds)
+        }
         self.countingDown = true
-        let seconds = 5;
-        self.countdown(seconds)
+        
+    
+        
     }
     
     func countdown(seconds: Int){
@@ -123,6 +152,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
         if (seconds == 0) {
             self.countingDown = false
             print("Metronome starting.")
+            self.countdownLabel.setText("Metronome Started")
             metronomeIsOn = true
             // Start the metronome.
             let metronomeTimeInterval:NSTimeInterval = 60.0 / tempo
@@ -133,8 +163,9 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
             return
         }
         
+        print("Metronome starting in: \(seconds)")
+        self.countdownLabel.setText("\(seconds)")
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) { () -> Void in
-            print("Metronome starting in: \(seconds)")
             self.countdown(seconds - 1)
             }
     }
@@ -155,5 +186,5 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
         }
     }
     
-    
+
 }
