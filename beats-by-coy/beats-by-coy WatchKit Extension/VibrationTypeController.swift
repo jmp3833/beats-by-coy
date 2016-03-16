@@ -10,15 +10,21 @@ import WatchKit
 import Foundation
 
 class VibrationTypeController: WKInterfaceController{
-    func createPickerItem(n: integer_t) -> WKPickerItem {
+    func createPickerItem(x: WKHapticType, y: String) -> WKPickerItem {
         let pickerItem = WKPickerItem()
-        pickerItem.title = String(n)
-        pickerItem.caption = String(n)
+        pickerItem.title = y
+        //pickerItem.caption = String(n)
         return pickerItem
     }
     
-    
-    
+    var vTypes = [
+        (WKHapticType.Notification, "Notification"),
+        (WKHapticType.Failure, "Fail"),
+        (WKHapticType.DirectionUp, "Up"),
+        (WKHapticType.DirectionDown, "Down"),
+        (WKHapticType.Click, "Click")
+    ]
+
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         // Configure interface objects here.
