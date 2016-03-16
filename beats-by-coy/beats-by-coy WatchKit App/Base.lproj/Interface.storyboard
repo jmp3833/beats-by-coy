@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
     <scenes>
-        <!--Settings-->
+        <!--SettingsController-->
         <scene sceneID="WFc-jV-Nmx">
             <objects>
                 <controller identifier="SettingsController" id="t3W-uv-rna" customClass="SettingsController" customModule="beats_by_coy_WatchKit_Extension">
@@ -87,7 +87,7 @@
                         </label>
                         <group width="1" alignment="center" verticalAlignment="center" id="4pb-xP-eaB">
                             <items>
-                                <picker width="42" height="100" alignment="right" id="nNs-uL-RgH">
+                                <picker width="50" height="100" alignment="right" id="nNs-uL-RgH">
                                     <connections>
                                         <action selector="bpmPickerChanged:" destination="AgC-eL-Hgc" id="GzB-K7-PDy"/>
                                     </connections>
