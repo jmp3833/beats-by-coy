@@ -109,8 +109,21 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
     }
     
     func playMetronomeVibration(){
-        WKInterfaceDevice.currentDevice().playHaptic(.Click)
-        print("buzz")
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if (defaults.valueForKey("VibrationType") != nil) {
+            let vibration = defaults.stringForKey("VibrationType")
+            let haptic = WKHapticType.init(rawValue: Int(vibration!)!)
+            
+            WKInterfaceDevice.currentDevice().playHaptic(haptic!)
+            print("buzz \(haptic!.rawValue)")
+        } else {
+            defaults.setValue(1, forKey: "VibrationType")
+            let haptic = WKHapticType.init(rawValue: 1)
+            
+            WKInterfaceDevice.currentDevice().playHaptic(haptic!)
+            print("buzz \(haptic!.rawValue)")
+        }
+        
     }
     
     func startCountdown() -> Void {
