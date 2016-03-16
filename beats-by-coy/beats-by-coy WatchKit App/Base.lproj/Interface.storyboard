@@ -45,15 +45,39 @@
                                         </mask>
                                     </variation>
                                 </group>
+                                <label alignment="center" verticalAlignment="center" text="Vibration Type" id="xeD-9Q-WuY"/>
+                                <group width="1" alignment="center" verticalAlignment="center" id="pbG-a6-Nqg">
+                                    <items>
+                                        <picker height="1" alignment="center" verticalAlignment="center" id="Uwv-yC-oeu">
+                                            <connections>
+                                                <action selector="vibrationTypePickerChanged:" destination="t3W-uv-rna" id="Vl5-j9-tJr"/>
+                                            </connections>
+                                        </picker>
+                                    </items>
+                                    <variation key="default">
+                                        <mask key="items">
+                                            <exclude reference="Uwv-yC-oeu"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="device=watch42mm">
+                                        <mask key="items">
+                                            <include reference="Uwv-yC-oeu"/>
+                                        </mask>
+                                    </variation>
+                                </group>
                             </items>
                             <variation key="default">
                                 <mask key="items">
                                     <exclude reference="5mo-nq-t0w"/>
+                                    <exclude reference="xeD-9Q-WuY"/>
+                                    <exclude reference="pbG-a6-Nqg"/>
                                 </mask>
                             </variation>
                             <variation key="device=watch42mm" height="128.5">
                                 <mask key="items">
                                     <include reference="5mo-nq-t0w"/>
+                                    <include reference="xeD-9Q-WuY"/>
+                                    <include reference="pbG-a6-Nqg"/>
                                 </mask>
                             </variation>
                         </group>
@@ -70,6 +94,7 @@
                     </variation>
                     <connections>
                         <outlet property="countdownSettingLabel" destination="uiY-wl-AYx" id="cTc-kQ-a3F"/>
+                        <outlet property="vibrationPicker" destination="Uwv-yC-oeu" id="q5T-JI-q2N"/>
                     </connections>
                 </controller>
             </objects>
@@ -164,6 +189,17 @@
                     </items>
                 </controller>
             </objects>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="iaK-Uu-3w2">
+            <objects>
+                <controller id="dnq-GJ-GiW">
+                    <items>
+                        <picker height="100" alignment="left" id="lFW-sG-v8g"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="463" y="122"/>
         </scene>
         <!--SignatureController-->
         <scene sceneID="ssi-Be-7k1">
