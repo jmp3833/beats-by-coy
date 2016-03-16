@@ -43,4 +43,20 @@ class MetronomeViewController: UIViewController, WCSessionDelegate {
                 print(error)
         })
     }
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        if message["BPMChanged"] != nil {
+            print(String(message["BPMChanged"] as! Int))
+            dispatch_async(dispatch_get_main_queue()) {
+                do {
+                    try self.tempoTextField.text = String(message["BPMChanged"] as! Int)
+                    
+                }
+                catch {
+                    print("set BPM didn't work")
+                }
+                
+            }
+        }
+    }
+    
 }
