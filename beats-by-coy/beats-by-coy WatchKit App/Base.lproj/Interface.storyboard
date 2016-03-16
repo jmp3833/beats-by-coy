@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
     <scenes>
-        <!--Settings-->
+        <!--SettingsController-->
         <scene sceneID="WFc-jV-Nmx">
             <objects>
                 <controller identifier="SettingsController" id="t3W-uv-rna" customClass="SettingsController" customModule="beats_by_coy_WatchKit_Extension">
@@ -172,13 +172,31 @@
                     <items>
                         <group width="1" alignment="left" id="kGK-bg-AaM">
                             <items>
-                                <picker height="141" alignment="left" id="M8q-FP-xFJ"/>
-                                <picker height="141" alignment="left" id="Bo7-a2-AC8"/>
+                                <picker width="60" height="141" alignment="right" id="Bo7-a2-AC8"/>
+                                <group width="70" height="1" alignment="left" verticalAlignment="center" layout="vertical" spacing="30" id="W8a-Dp-BPp">
+                                    <items>
+                                        <button width="1" alignment="center" verticalAlignment="center" title="Button" id="C71-Lw-dMN">
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="font" type="system" pointSize="15"/>
+                                            <connections>
+                                                <action selector="onUpperTap" destination="eum-Nm-Gj2" id="uyM-4L-c4o"/>
+                                            </connections>
+                                        </button>
+                                        <button width="1" alignment="center" verticalAlignment="center" title="Button" id="qdO-I0-dZT">
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="onLowerTap" destination="eum-Nm-Gj2" id="Al5-JF-cd3"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
                             </items>
                         </group>
                     </items>
                     <connections>
-                        <outlet property="UpperPicker" destination="M8q-FP-xFJ" id="TYp-jD-iD7"/>
+                        <outlet property="lowerSignature" destination="qdO-I0-dZT" id="v3V-d6-ODJ"/>
+                        <outlet property="signaturePicker" destination="Bo7-a2-AC8" id="ZKm-1e-pq1"/>
+                        <outlet property="upperSignature" destination="C71-Lw-dMN" id="Pof-Pw-ojX"/>
                     </connections>
                 </controller>
             </objects>

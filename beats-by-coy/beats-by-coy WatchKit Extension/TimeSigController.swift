@@ -13,8 +13,13 @@ import WatchConnectivity
 
 class TimeSigController: WKInterfaceController {
     
-    @IBOutlet var UpperPicker: WKInterfacePicker!
+    @IBOutlet var signaturePicker: WKInterfacePicker!
     
+    @IBOutlet var upperSignature: WKInterfaceButton!
+    
+    @IBOutlet var lowerSignature: WKInterfaceButton!
+    
+    var selectedSignature: WKInterfaceButton?
     
     func createPickerItem(n: integer_t) -> WKPickerItem {
         let pickerItem = WKPickerItem()
@@ -26,11 +31,31 @@ class TimeSigController: WKInterfaceController {
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         // Configure interface objects here.
-        UpperPicker.setItems((1...16).map(createPickerItem))
-        UpperPicker.setSelectedItemIndex(3
-        )
+
         print("YO?!?!?!")
     }
 
+    
+    @IBAction func onUpperTap() {
+        selectSignature(upperSignature)
+    }
+    
+    
+    @IBAction func onLowerTap() {
+        selectSignature(lowerSignature)
+    }
+    
+    
+    func selectSignature(button: WKInterfaceButton?) {
+        selectedSignature?.setBackgroundColor(UIColor.blackColor())
+        if selectedSignature == button {
+            selectedSignature = nil;
+        } else {
+            selectedSignature = button;
+            // restyle, etc
+            button?.setBackgroundColor(UIColor.cyanColor())
+            
+        }
+    }
     
 }
