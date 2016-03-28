@@ -39,8 +39,16 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         // Configure interface objects here.
-        bpmPicker.setItems((10...120).map(createPickerItem))
-        bpmPicker.setSelectedItemIndex(70)
+        bpmPicker.setItems((10...200).filter({$0%5==0}).map(createPickerItem))
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if (defaults.valueForKey("BPM") != nil) {
+            let index = Int(defaults.stringForKey("BPM")!)
+            bpmPicker.setSelectedItemIndex(index!)
+        } else {
+            bpmPicker.setSelectedItemIndex(70)
+        }
     }
     
     /*
@@ -63,6 +71,19 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
     */
     @IBAction func signatureMenuActivate() {
         pushControllerWithName("SignatureController", context: nil)
+    }
+    
+    @IBAction func bpmPickerChanged(value: Int) {
+        // Save BPM in settings
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let bpmValue = (value * 5) + 10
+        defaults.setValue(bpmValue, forKey: "BPM")
+        
+        self.session.sendMessage(["BPMChanged": bpmValue], replyHandler: { (response) -> Void in
+            }, errorHandler: { (error) -> Void in
+                print(error)
+        })
+
     }
     
     /*
@@ -173,10 +194,13 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
             dispatch_async(dispatch_get_main_queue()) {
                 //score stuff update
                 self.tempo = message["ChangeTempo"] as! Double
+                self.bpmPicker.setSelectedItemIndex((Int(self.tempo) - 10) / 5)
             }
         }
         else if message["StartMetronome"] != nil{
             self.tempo = message["StartMetronome"] as! Double
+            self.bpmPicker.setSelectedItemIndex((Int(self.tempo) - 10) / 5)
+
             startMetronome()
         }
         else if message["StopMetronome"] != nil{
