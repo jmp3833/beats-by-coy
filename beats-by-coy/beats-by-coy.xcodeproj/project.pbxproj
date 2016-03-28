@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		993B3A1D1CA99E40006D8A43 /* MetronomeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993B3A1C1CA99E40006D8A43 /* MetronomeTimer.swift */; };
 		99CA6C821C90A58C007AF6E6 /* TimeSigController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CA6C811C90A58C007AF6E6 /* TimeSigController.swift */; };
 		ADAD892E1C7B8EF1003094DC /* MetronomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAD892D1C7B8EF1003094DC /* MetronomeViewController.swift */; };
 		D0B878D31C7B51F800015C9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B878D21C7B51F800015C9C /* AppDelegate.swift */; };
@@ -83,6 +84,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		993B3A1C1CA99E40006D8A43 /* MetronomeTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetronomeTimer.swift; sourceTree = "<group>"; };
 		99CA6C811C90A58C007AF6E6 /* TimeSigController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSigController.swift; sourceTree = "<group>"; };
 		ADAD892D1C7B8EF1003094DC /* MetronomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MetronomeViewController.swift; path = ../MetronomeViewController.swift; sourceTree = "<group>"; };
 		D0B878CF1C7B51F800015C9C /* beats-by-coy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "beats-by-coy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,6 +221,7 @@
 				D0B879151C7B51F900015C9C /* Info.plist */,
 				D0B8790B1C7B51F900015C9C /* Supporting Files */,
 				99CA6C811C90A58C007AF6E6 /* TimeSigController.swift */,
+				993B3A1C1CA99E40006D8A43 /* MetronomeTimer.swift */,
 			);
 			path = "beats-by-coy WatchKit Extension";
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				D0B879121C7B51F900015C9C /* NotificationController.swift in Sources */,
 				D0B879101C7B51F900015C9C /* ExtensionDelegate.swift in Sources */,
 				D0B8790E1C7B51F900015C9C /* InterfaceController.swift in Sources */,
+				993B3A1D1CA99E40006D8A43 /* MetronomeTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

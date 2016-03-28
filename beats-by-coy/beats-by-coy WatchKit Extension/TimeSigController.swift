@@ -19,6 +19,8 @@ class TimeSigController: WKInterfaceController {
     
     @IBOutlet var lowerSignature: WKInterfaceButton!
     
+    var timer = MetronomeTimer.instance
+    
     var selectedSignature: WKInterfaceButton?
     
     func createPickerItem(n: integer_t) -> WKPickerItem {

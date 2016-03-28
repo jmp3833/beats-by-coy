@@ -16,18 +16,14 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
     @IBOutlet var tempoLabel: WKInterfaceLabel!
     @IBOutlet var bpmPicker: WKInterfacePicker!
     @IBOutlet var countdownLabel: WKInterfaceLabel!
+    
+    var timer: MetronomeTimer = MetronomeTimer.instance
 
     
-    var metronomeTimer: NSTimer? = nil
     var countdownTimer: NSTimer? = nil
     var session : WCSession!
-    var metronomeIsOn = false
     var countingDown = false
-    var tempo: NSTimeInterval = 80 {
-        didSet {
 
-        }
-    }
     
     func createPickerItem(n: integer_t) -> WKPickerItem {
         let pickerItem = WKPickerItem()
@@ -102,31 +98,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
         super.didDeactivate()
     }
     
-    func stopMetronome(){
-        if metronomeIsOn {
-            metronomeIsOn = false
-            self.countdownLabel.setText("Metronome Stopped")
-            metronomeTimer?.invalidate()
-        }
-    }
-    
-    func startMetronome(){
-        if metronomeIsOn {
-
-            metronomeTimer?.invalidate()
-            
-        }
-        
-        // Start countdown
-        dispatch_sync(dispatch_get_main_queue()){
-            self.startCountdown()
-        }
-    }
-    
-    func playMetronomeVibration(){
-        WKInterfaceDevice.currentDevice().playHaptic(.Click)
-        print("buzz")
-    }
     
     func startCountdown() -> Void {
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -153,13 +124,9 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
             self.countingDown = false
             print("Metronome starting.")
             self.countdownLabel.setText("Metronome Started")
-            metronomeIsOn = true
-            // Start the metronome.
-            let metronomeTimeInterval:NSTimeInterval = 60.0 / tempo
-            print(metronomeTimeInterval)
-            dispatch_async(dispatch_get_main_queue()){
-                self.metronomeTimer = NSTimer.scheduledTimerWithTimeInterval(metronomeTimeInterval, target: self, selector: Selector("playMetronomeVibration"), userInfo: nil, repeats: true)
-            }
+
+            timer.startMetronome()
+            
             return
         }
         
@@ -174,15 +141,15 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
         if message["ChangeTempo"] != nil{
             dispatch_async(dispatch_get_main_queue()) {
                 //score stuff update
-                self.tempo = message["ChangeTempo"] as! Double
+                self.timer.tempo = message["ChangeTempo"] as! Double
             }
         }
         else if message["StartMetronome"] != nil{
-            self.tempo = message["StartMetronome"] as! Double
-            startMetronome()
+            self.timer.tempo = message["StartMetronome"] as! Double
+            timer.startMetronome()
         }
         else if message["StopMetronome"] != nil{
-            stopMetronome()
+            timer.stopMetronome()
         }
     }
     
