@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
     </dependencies>
     <scenes>
-        <!--Settings-->
+        <!--SettingsController-->
         <scene sceneID="WFc-jV-Nmx">
             <objects>
                 <controller identifier="SettingsController" id="t3W-uv-rna" customClass="SettingsController" customModule="beats_by_coy_WatchKit_Extension">
@@ -31,17 +31,9 @@
                                             </connections>
                                         </button>
                                     </items>
-                                    <variation key="default">
-                                        <mask key="items">
-                                            <exclude reference="CUA-mD-vGV"/>
-                                            <exclude reference="UJJ-mt-JyN"/>
-                                        </mask>
-                                    </variation>
                                     <variation key="device=watch42mm">
                                         <mask key="items">
-                                            <include reference="CUA-mD-vGV"/>
                                             <include reference="uiY-wl-AYx"/>
-                                            <include reference="UJJ-mt-JyN"/>
                                         </mask>
                                     </variation>
                                 </group>
@@ -66,32 +58,10 @@
                                     </variation>
                                 </group>
                             </items>
-                            <variation key="default">
-                                <mask key="items">
-                                    <exclude reference="5mo-nq-t0w"/>
-                                    <exclude reference="xeD-9Q-WuY"/>
-                                    <exclude reference="pbG-a6-Nqg"/>
-                                </mask>
-                            </variation>
-                            <variation key="device=watch42mm" height="128.5">
-                                <mask key="items">
-                                    <include reference="5mo-nq-t0w"/>
-                                    <include reference="xeD-9Q-WuY"/>
-                                    <include reference="pbG-a6-Nqg"/>
-                                </mask>
-                            </variation>
+                            <variation key="device=watch42mm" height="128.5"/>
                         </group>
                     </items>
-                    <variation key="default">
-                        <mask key="items">
-                            <exclude reference="YkO-gR-ni2"/>
-                        </mask>
-                    </variation>
-                    <variation key="device=watch42mm" title="Settings">
-                        <mask key="items">
-                            <include reference="YkO-gR-ni2"/>
-                        </mask>
-                    </variation>
+                    <variation key="device=watch42mm" title="Settings"/>
                     <connections>
                         <outlet property="countdownSettingLabel" destination="uiY-wl-AYx" id="cTc-kQ-a3F"/>
                         <outlet property="vibrationPicker" destination="Uwv-yC-oeu" id="q5T-JI-q2N"/>
