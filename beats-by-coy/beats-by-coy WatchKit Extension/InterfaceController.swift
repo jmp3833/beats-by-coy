@@ -145,6 +145,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
             print("buzz \(haptic!.rawValue)")
         }
         
+        //Send message to iphone to vibrate if desired
+        var vibrationDict = [String:Bool]()
+        vibrationDict["vibrate"] = true
+        WCSession.defaultSession().sendMessage(vibrationDict, replyHandler: nil, errorHandler: nil)
     }
     
     func startCountdown() -> Void {

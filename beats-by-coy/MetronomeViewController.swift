@@ -44,6 +44,10 @@ class MetronomeViewController: UIViewController, WCSessionDelegate {
         })
     }
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        print("Message")
+        if message["vibrate"] != nil {
+            print("phone buzz")
+        }
         if message["BPMChanged"] != nil {
             print(String(message["BPMChanged"] as! Int))
             dispatch_async(dispatch_get_main_queue()) {
