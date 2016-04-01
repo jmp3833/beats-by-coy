@@ -10,24 +10,46 @@ import WatchKit
 import Foundation
 
 class VibrationTypeController: WKInterfaceController{
-    func createPickerItem(x: WKHapticType, y: String) -> WKPickerItem {
-        let pickerItem = WKPickerItem()
-        pickerItem.title = y
-        //pickerItem.caption = String(n)
-        return pickerItem
-    }
-    
-    var vTypes = [
-        (WKHapticType.Notification, "Notification"),
-        (WKHapticType.Failure, "Fail"),
-        (WKHapticType.DirectionUp, "Up"),
-        (WKHapticType.DirectionDown, "Down"),
-        (WKHapticType.Click, "Click")
-    ]
+    @IBOutlet var vibrationPicker: WKInterfacePicker!
+     
+     
+     var vTypes = [
+     WKHapticType.Notification,
+     WKHapticType.Failure,
+     WKHapticType.DirectionUp,
+     WKHapticType.DirectionDown,
+     WKHapticType.Click
+     ]
+     
+     func createPickerItem(n: integer_t) -> WKPickerItem {
+     let pickerItem = WKPickerItem()
+     pickerItem.title = String(n)
+     pickerItem.caption = String(n)
+     return pickerItem
+     }
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         // Configure interface objects here.
-
+        let defaults = NSUserDefaults.standardUserDefaults()
+        vibrationPicker.setItems((1...5).map(createPickerItem))
+        
+        if (defaults.valueForKey("VibrationType") != nil) {
+            let vibration = defaults.stringForKey("VibrationType")!
+            vibrationPicker.setSelectedItemIndex(Int(vibration)!)
+        } else {
+            defaults.setValue(1, forKey: "VibrationType")
+            vibrationPicker.setSelectedItemIndex(1)
+        }
+        
     }
+    
+    
+     @IBAction func vibrationTypePickerChanged(value: Int) {
+     // Save Vibration Type Setting
+     let defaults = NSUserDefaults.standardUserDefaults()
+     
+     defaults.setValue(value, forKey: "VibrationType")
+     
+     }
 }
