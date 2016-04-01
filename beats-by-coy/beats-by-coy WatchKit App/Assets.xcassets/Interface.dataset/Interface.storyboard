@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
+    </dependencies>
+    <scenes>
+        <!--SettingsController-->
+        <scene sceneID="WFc-jV-Nmx">
+            <objects>
+                <controller identifier="SettingsController" id="t3W-uv-rna" customClass="SettingsController" customModule="beats_by_coy_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="100" alignment="center" layout="vertical" id="YkO-gR-ni2">
+                            <items>
+                                <label width="100" alignment="center" text="Countdown Time" textAlignment="center" id="UXA-NI-ZiM">
+                                    <variation key="device=watch42mm" width="156"/>
+                                </label>
+                                <group width="1" alignment="center" id="5mo-nq-t0w">
+                                    <items>
+                                        <button width="30" alignment="left" title="-" id="CUA-mD-vGV">
+                                            <connections>
+                                                <action selector="countdownMinus" destination="t3W-uv-rna" id="mhl-ro-dW5"/>
+                                            </connections>
+                                        </button>
+                                        <label width="50" height="100" alignment="center" text="5" textAlignment="center" id="uiY-wl-AYx">
+                                            <variation key="device=watch42mm" height="35.5"/>
+                                        </label>
+                                        <button width="30" alignment="right" title="+" id="UJJ-mt-JyN">
+                                            <connections>
+                                                <action selector="countdownPlus" destination="t3W-uv-rna" id="iL5-ZT-trL"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                    <variation key="default">
+                                        <mask key="items">
+                                            <exclude reference="CUA-mD-vGV"/>
+                                            <exclude reference="UJJ-mt-JyN"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="device=watch42mm">
+                                        <mask key="items">
+                                            <include reference="CUA-mD-vGV"/>
+                                            <include reference="uiY-wl-AYx"/>
+                                            <include reference="UJJ-mt-JyN"/>
+                                        </mask>
+                                    </variation>
+                                </group>
+                            </items>
+                            <variation key="default">
+                                <mask key="items">
+                                    <exclude reference="5mo-nq-t0w"/>
+                                </mask>
+                            </variation>
+                            <variation key="device=watch42mm" height="128.5">
+                                <mask key="items">
+                                    <include reference="5mo-nq-t0w"/>
+                                </mask>
+                            </variation>
+                        </group>
+                    </items>
+                    <variation key="default">
+                        <mask key="items">
+                            <exclude reference="YkO-gR-ni2"/>
+                        </mask>
+                    </variation>
+                    <variation key="device=watch42mm" title="Settings">
+                        <mask key="items">
+                            <include reference="YkO-gR-ni2"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <outlet property="countdownSettingLabel" destination="uiY-wl-AYx" id="cTc-kQ-a3F"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="112.46153846153847" y="30.948717948717952"/>
+        </scene>
+        <!--Main Menu-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller title="Main Menu" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="beats_by_coy_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="136" alignment="left" text="Countdown" textAlignment="center" id="uam-tN-wKZ">
+                            <variation key="device=watch42mm" width="156">
+                                <nil key="text"/>
+                            </variation>
+                        </label>
+                        <group width="1" alignment="center" verticalAlignment="center" id="4pb-xP-eaB">
+                            <items>
+                                <picker width="42" height="100" alignment="right" id="nNs-uL-RgH"/>
+                                <label width="71" alignment="right" verticalAlignment="center" text="BPM" id="9XY-p3-p7q"/>
+                            </items>
+                        </group>
+                    </items>
+                    <menu key="menu" id="neA-v9-l8B">
+                        <items>
+                            <menuItem title="Sync" icon="info" id="l4j-2F-G5G">
+                                <connections>
+                                    <action selector="syncMenuActivate" destination="AgC-eL-Hgc" id="xxg-Lh-mbH"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Settings" icon="info" id="iMc-sa-q7z">
+                                <connections>
+                                    <action selector="settingsMenuActivate" destination="AgC-eL-Hgc" id="ueX-il-Qqg"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Signature" icon="mute" id="ctD-BD-a1z">
+                                <connections>
+                                    <action selector="signatureMenuActivate" destination="AgC-eL-Hgc" id="MxR-up-31c"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Volume" icon="speaker" id="UzW-bf-dtx">
+                                <connections>
+                                    <action selector="volumeMenuActivate" destination="AgC-eL-Hgc" id="UME-rA-gtT"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="bpmPicker" destination="nNs-uL-RgH" id="cuF-CH-RMA"/>
+                        <outlet property="countdownLabel" destination="uam-tN-wKZ" id="k6c-aK-Gv9"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1.7435897435897436" y="286.38461538461542"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="beats_by_coy_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--SyncController-->
+        <scene sceneID="F86-ty-fbz">
+            <objects>
+                <controller identifier="SyncController" id="Hv1-Z4-Fsh" userLabel="SyncController">
+                    <items>
+                        <group width="1" alignment="left" verticalAlignment="center" id="vWw-5j-toR">
+                            <items>
+                                <label alignment="left" text="Sync Screen" id="vGn-IE-ys0"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="iaK-Uu-3w2">
+            <objects>
+                <controller id="dnq-GJ-GiW">
+                    <items>
+                        <picker height="100" alignment="left" id="lFW-sG-v8g"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="463" y="122"/>
+        </scene>
+        <!--SignatureController-->
+        <scene sceneID="ssi-Be-7k1">
+            <objects>
+                <controller identifier="SignatureController" id="eum-Nm-Gj2" userLabel="SignatureController">
+                    <items>
+                        <group width="1" alignment="left" id="kGK-bg-AaM">
+                            <items>
+                                <label alignment="left" text="Signature view" id="MAF-Oa-kQ5"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+        </scene>
+        <!--VolumeController-->
+        <scene sceneID="aUf-04-8ue">
+            <objects>
+                <controller identifier="VolumeController" id="b1H-LA-SuI" userLabel="VolumeController">
+                    <items>
+                        <group width="1" alignment="left" id="OnT-1l-VJ7">
+                            <items>
+                                <label alignment="left" text="Volume screen" id="svn-Dk-CgT"/>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+        </scene>
+    </scenes>
+</document>
