@@ -33,10 +33,23 @@ class TimeSigController: WKInterfaceController {
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         // Configure interface objects here.
+        upperSignature.setTitle(String(timer.timeSignature.beatsPerBar));
+        lowerSignature.setTitle(String(timer.timeSignature.noteValue));
 
         print("YO?!?!?!")
     }
 
+    
+    @IBAction func onSelection(value: Int) {
+        selectedSignature?.setTitle(String(value + 1));
+        
+        if selectedSignature == upperSignature {
+            timer.timeSignature.beatsPerBar = value + 1;
+        } else if selectedSignature == lowerSignature {
+            timer.timeSignature.noteValue = value + 1;
+        }
+
+    }
     
     @IBAction func onUpperTap() {
         selectSignature(upperSignature)
@@ -55,9 +68,21 @@ class TimeSigController: WKInterfaceController {
         } else {
             selectedSignature = button;
             // restyle, etc
-            button?.setBackgroundColor(UIColor.cyanColor())
+            button?.setBackgroundColor(UIColor.blueColor())
             
+        }
+        if selectedSignature == nil {
+            signaturePicker.setItems([]);
+        } else {
+            signaturePicker.setItems((1...12).map(createPickerItem));
+            if selectedSignature == upperSignature {
+                signaturePicker.setSelectedItemIndex(
+                    timer.timeSignature.beatsPerBar - 1);
+            } else if selectedSignature == lowerSignature {
+                signaturePicker.setSelectedItemIndex(
+                    timer.timeSignature.noteValue - 1);
+            }
         }
     }
     
-}
+} 

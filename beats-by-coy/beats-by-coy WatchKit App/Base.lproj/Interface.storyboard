@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
     </dependencies>
     <scenes>
         <!--SettingsController-->
@@ -172,7 +172,11 @@
                     <items>
                         <group width="1" alignment="left" id="kGK-bg-AaM">
                             <items>
-                                <picker width="60" height="141" alignment="right" id="Bo7-a2-AC8"/>
+                                <picker width="60" height="141" alignment="center" id="Bo7-a2-AC8">
+                                    <connections>
+                                        <action selector="onSelection:" destination="eum-Nm-Gj2" id="lQI-kR-k35"/>
+                                    </connections>
+                                </picker>
                                 <group width="70" height="1" alignment="left" verticalAlignment="center" layout="vertical" spacing="30" id="W8a-Dp-BPp">
                                     <items>
                                         <button width="1" alignment="center" verticalAlignment="center" title="Button" id="C71-Lw-dMN">
