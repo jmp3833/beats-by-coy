@@ -148,7 +148,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
         //Send message to iphone to vibrate if desired
         var vibrationDict = [String:Bool]()
         vibrationDict["vibrate"] = true
-        WCSession.defaultSession().sendMessage(vibrationDict, replyHandler: nil, errorHandler: nil)
+        self.session.sendMessage(vibrationDict, replyHandler: { (response) -> Void in
+            }, errorHandler: { (error) -> Void in
+                print(error)
+        })
     }
     
     func startCountdown() -> Void {

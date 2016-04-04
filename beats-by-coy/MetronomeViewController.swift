@@ -8,6 +8,7 @@
 
 import UIKit
 import WatchConnectivity
+import AudioToolbox
 
 class MetronomeViewController: UIViewController, WCSessionDelegate {
    
@@ -46,7 +47,18 @@ class MetronomeViewController: UIViewController, WCSessionDelegate {
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
         print("Message")
         if message["vibrate"] != nil {
-            print("phone buzz")
+            //Make watch vibrate if appropriate bit is flipped
+            let defaults = NSUserDefaults.standardUserDefaults()
+            
+            if (defaults.valueForKey("PhoneVibrate") != nil){
+                if(defaults.stringForKey("PhoneVibrate")! == "true") {
+                  AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+                }
+            }
+            
+            else {
+                defaults.setValue("false", forKey: "PhoneVibrate");
+            }
         }
         if message["BPMChanged"] != nil {
             print(String(message["BPMChanged"] as! Int))
