@@ -26,6 +26,15 @@ class MetronomeViewController: UIViewController, WCSessionDelegate {
                 print(error)
         })
     }
+    @IBAction func VibrateOnPhoneSet(sender: UISwitch) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if(sender.on) {
+          defaults.setValue("true", forKey: "PhoneVibrate");
+        }
+        else {
+            defaults.setValue("false", forKey: "PhoneVibrate");
+        }
+    }
     @IBAction func startMetronome(sender: AnyObject) {
         self.session.sendMessage(["StartMetronome": Double(tempoTextField.text!)!], replyHandler: { (response) -> Void in
             }, errorHandler: { (error) -> Void in
