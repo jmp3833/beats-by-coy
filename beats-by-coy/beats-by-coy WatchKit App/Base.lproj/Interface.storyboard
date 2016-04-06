@@ -17,7 +17,7 @@
                                 </label>
                                 <group width="1" alignment="center" id="5mo-nq-t0w">
                                     <items>
-                                        <button width="30" alignment="left" title="-" id="CUA-mD-vGV">
+                                        <button width="30" alignment="left" verticalAlignment="center" title="-" id="CUA-mD-vGV">
                                             <connections>
                                                 <action selector="countdownMinus" destination="t3W-uv-rna" id="mhl-ro-dW5"/>
                                             </connections>
@@ -25,7 +25,7 @@
                                         <label width="50" height="100" alignment="center" text="5" textAlignment="center" id="uiY-wl-AYx">
                                             <variation key="device=watch42mm" height="35.5"/>
                                         </label>
-                                        <button width="30" alignment="right" title="+" id="UJJ-mt-JyN">
+                                        <button width="30" alignment="right" verticalAlignment="center" title="+" id="UJJ-mt-JyN">
                                             <connections>
                                                 <action selector="countdownPlus" destination="t3W-uv-rna" id="iL5-ZT-trL"/>
                                             </connections>
