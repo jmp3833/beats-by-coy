@@ -73,17 +73,17 @@
                     </items>
                     <menu key="menu" id="neA-v9-l8B">
                         <items>
-                            <menuItem title="Sync" icon="info" id="l4j-2F-G5G">
+                            <menuItem title="Vibration" icon="shuffle" id="l4j-2F-G5G">
                                 <connections>
                                     <action selector="syncMenuActivate" destination="AgC-eL-Hgc" id="xxg-Lh-mbH"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Settings" icon="info" id="iMc-sa-q7z">
+                            <menuItem title="Countdown" icon="play" id="iMc-sa-q7z">
                                 <connections>
                                     <action selector="settingsMenuActivate" destination="AgC-eL-Hgc" id="ueX-il-Qqg"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Signature" icon="mute" id="ctD-BD-a1z">
+                            <menuItem title="Signature" icon="repeat" id="ctD-BD-a1z">
                                 <connections>
                                     <action selector="signatureMenuActivate" destination="AgC-eL-Hgc" id="MxR-up-31c"/>
                                 </connections>
