@@ -14,11 +14,11 @@ class VibrationTypeController: WKInterfaceController{
      
      
      var vTypes = [
-     WKHapticType.Notification,
      WKHapticType.Failure,
      WKHapticType.DirectionUp,
+     WKHapticType.Click,
      WKHapticType.DirectionDown,
-     WKHapticType.Click
+     WKHapticType.Notification
      ]
      
      func createPickerItem(n: integer_t) -> WKPickerItem {
