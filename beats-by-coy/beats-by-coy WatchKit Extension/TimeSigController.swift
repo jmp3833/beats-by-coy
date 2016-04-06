@@ -13,15 +13,33 @@ import WatchConnectivity
 
 class TimeSigController: WKInterfaceController {
     
-    @IBOutlet var signaturePicker: WKInterfacePicker!
+    var signaturePicker: WKInterfacePicker?
     
     @IBOutlet var upperSignature: WKInterfaceButton!
     
     @IBOutlet var lowerSignature: WKInterfaceButton!
+    @IBOutlet var upperPicker: WKInterfacePicker!
+    @IBOutlet var lowerPicker: WKInterfacePicker!
     
     var timer = MetronomeTimer.instance
     
-    var selectedSignature: WKInterfaceButton?
+    var selectedSignature: WKInterfaceButton? {
+        willSet(val) {
+            selectedSignature?.setBackgroundColor(UIColor.blackColor())
+        }
+        
+        didSet {
+            selectedSignature?.setBackgroundColor(UIColor.blueColor())
+            if selectedSignature == upperSignature {
+                signaturePicker = upperPicker;
+            } else if selectedSignature == lowerSignature{
+                signaturePicker = lowerPicker;
+            } else {
+                signaturePicker = nil;
+            }
+
+        }
+    }
     
     func createPickerItem(n: integer_t) -> WKPickerItem {
         let pickerItem = WKPickerItem()
@@ -35,21 +53,14 @@ class TimeSigController: WKInterfaceController {
         // Configure interface objects here.
         upperSignature.setTitle(String(timer.timeSignature.beatsPerBar));
         lowerSignature.setTitle(String(timer.timeSignature.noteValue));
-
+        upperPicker.setItems((1...12).map(createPickerItem));
+        lowerPicker.setItems((1...12).map(createPickerItem));
+        upperPicker.setHidden(true)
+        lowerPicker.setHidden(true)
+        
         print("YO?!?!?!")
     }
 
-    
-    @IBAction func onSelection(value: Int) {
-        selectedSignature?.setTitle(String(value + 1));
-        
-        if selectedSignature == upperSignature {
-            timer.timeSignature.beatsPerBar = value + 1;
-        } else if selectedSignature == lowerSignature {
-            timer.timeSignature.noteValue = value + 1;
-        }
-
-    }
     
     @IBAction func onUpperTap() {
         selectSignature(upperSignature)
@@ -60,29 +71,35 @@ class TimeSigController: WKInterfaceController {
         selectSignature(lowerSignature)
     }
     
+    @IBAction func onUpperSet(value: Int) {
+        selectedSignature?.setTitle(String(value + 1));
+        
+        timer.timeSignature.beatsPerBar = value;
+    }
+    @IBAction func onLowerSet(value: Int) {
+        selectedSignature?.setTitle(String(value + 1));
+        
+        timer.timeSignature.noteValue = value + 1;
+    }
     
     func selectSignature(button: WKInterfaceButton?) {
-        selectedSignature?.setBackgroundColor(UIColor.blackColor())
+        signaturePicker?.setHidden(true);
+        
         if selectedSignature == button {
             selectedSignature = nil;
         } else {
-            selectedSignature = button;
-            // restyle, etc
-            button?.setBackgroundColor(UIColor.blueColor())
+            selectedSignature = button
+        }
+        
+        signaturePicker?.setHidden(false)
+        if selectedSignature == upperSignature {
+            signaturePicker?.setSelectedItemIndex(timer.timeSignature.beatsPerBar)
+
+        } else if selectedSignature == lowerSignature {
+            signaturePicker?.setSelectedItemIndex(timer.timeSignature.noteValue)
             
         }
-        if selectedSignature == nil {
-            signaturePicker.setItems([]);
-        } else {
-            signaturePicker.setItems((1...12).map(createPickerItem));
-            if selectedSignature == upperSignature {
-                signaturePicker.setSelectedItemIndex(
-                    timer.timeSignature.beatsPerBar - 1);
-            } else if selectedSignature == lowerSignature {
-                signaturePicker.setSelectedItemIndex(
-                    timer.timeSignature.noteValue - 1);
-            }
-        }
+ 
     }
     
 } 

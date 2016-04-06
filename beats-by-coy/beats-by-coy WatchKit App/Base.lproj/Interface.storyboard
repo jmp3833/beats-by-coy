@@ -170,13 +170,8 @@
             <objects>
                 <controller identifier="SignatureController" id="eum-Nm-Gj2" userLabel="SignatureController" customClass="TimeSigController" customModule="beats_by_coy_WatchKit_Extension">
                     <items>
-                        <group width="1" alignment="left" id="kGK-bg-AaM">
+                        <group width="1" height="145" alignment="left" verticalAlignment="center" id="kGK-bg-AaM">
                             <items>
-                                <picker width="60" height="141" alignment="center" id="Bo7-a2-AC8">
-                                    <connections>
-                                        <action selector="onSelection:" destination="eum-Nm-Gj2" id="lQI-kR-k35"/>
-                                    </connections>
-                                </picker>
                                 <group width="70" height="1" alignment="left" verticalAlignment="center" layout="vertical" spacing="30" id="W8a-Dp-BPp">
                                     <items>
                                         <button width="1" alignment="center" verticalAlignment="center" title="Button" id="C71-Lw-dMN">
@@ -194,12 +189,27 @@
                                         </button>
                                     </items>
                                 </group>
+                                <group width="59" height="1" alignment="right" verticalAlignment="center" layout="vertical" id="rwI-jb-dZY">
+                                    <items>
+                                        <picker height="1" alignment="left" id="qNO-FX-uvd">
+                                            <connections>
+                                                <action selector="onUpperSet:" destination="eum-Nm-Gj2" id="lFm-nE-oJC"/>
+                                            </connections>
+                                        </picker>
+                                        <picker height="1" alignment="left" id="3dd-k2-qZr">
+                                            <connections>
+                                                <action selector="onLowerSet:" destination="eum-Nm-Gj2" id="Ota-O8-q1d"/>
+                                            </connections>
+                                        </picker>
+                                    </items>
+                                </group>
                             </items>
                         </group>
                     </items>
                     <connections>
+                        <outlet property="lowerPicker" destination="3dd-k2-qZr" id="oWF-Mz-SNY"/>
                         <outlet property="lowerSignature" destination="qdO-I0-dZT" id="v3V-d6-ODJ"/>
-                        <outlet property="signaturePicker" destination="Bo7-a2-AC8" id="ZKm-1e-pq1"/>
+                        <outlet property="upperPicker" destination="qNO-FX-uvd" id="R8d-JP-5Dk"/>
                         <outlet property="upperSignature" destination="C71-Lw-dMN" id="Pof-Pw-ojX"/>
                     </connections>
                 </controller>
