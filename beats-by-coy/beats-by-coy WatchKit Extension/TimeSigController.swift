@@ -74,7 +74,7 @@ class TimeSigController: WKInterfaceController {
     @IBAction func onUpperSet(value: Int) {
         selectedSignature?.setTitle(String(value + 1));
         
-        timer.timeSignature.beatsPerBar = value;
+        timer.timeSignature.beatsPerBar = value + 1;
     }
     @IBAction func onLowerSet(value: Int) {
         selectedSignature?.setTitle(String(value + 1));
@@ -84,6 +84,7 @@ class TimeSigController: WKInterfaceController {
     
     func selectSignature(button: WKInterfaceButton?) {
         signaturePicker?.setHidden(true);
+        signaturePicker?.resignFocus();
         
         if selectedSignature == button {
             selectedSignature = nil;
@@ -92,11 +93,12 @@ class TimeSigController: WKInterfaceController {
         }
         
         signaturePicker?.setHidden(false)
+        signaturePicker?.focus();
         if selectedSignature == upperSignature {
-            signaturePicker?.setSelectedItemIndex(timer.timeSignature.beatsPerBar)
+            signaturePicker?.setSelectedItemIndex(timer.timeSignature.beatsPerBar - 1)
 
         } else if selectedSignature == lowerSignature {
-            signaturePicker?.setSelectedItemIndex(timer.timeSignature.noteValue)
+            signaturePicker?.setSelectedItemIndex(timer.timeSignature.noteValue - 1)
             
         }
  

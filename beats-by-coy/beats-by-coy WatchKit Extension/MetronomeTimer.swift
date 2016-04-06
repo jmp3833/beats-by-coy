@@ -19,6 +19,8 @@ class MetronomeTimer: NSObject {
     
     var tempo: NSTimeInterval = 80
     
+    var beatNumber: Int = 0
+    
     var isRunning: Bool = false {
         didSet {
             
@@ -57,8 +59,15 @@ class MetronomeTimer: NSObject {
     }
     
     func playMetronomeVibration(){
-        WKInterfaceDevice.currentDevice().playHaptic(.Click)
-        print("buzz")
+        beatNumber = (beatNumber + 1) % timeSignature.beatsPerBar
+        if beatNumber == 0 {
+            WKInterfaceDevice.currentDevice().playHaptic(.Click)
+            print("downbeat")
+        } else {
+            WKInterfaceDevice.currentDevice().playHaptic(.Click)
+            print("buzz")
+        }
+        
     }
     
 }
