@@ -98,7 +98,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
         super.didDeactivate()
     }
     
+<<<<<<< Updated upstream
     
+=======
+>>>>>>> Stashed changes
     func startCountdown() -> Void {
         let defaults = NSUserDefaults.standardUserDefaults()
         
@@ -141,11 +144,22 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
         if message["ChangeTempo"] != nil{
             dispatch_async(dispatch_get_main_queue()) {
                 //score stuff update
+<<<<<<< Updated upstream
                 self.timer.tempo = message["ChangeTempo"] as! Double
             }
         }
         else if message["StartMetronome"] != nil{
             self.timer.tempo = message["StartMetronome"] as! Double
+=======
+                let tempo = message["ChangeTempo"] as! Double
+                self.bpmPicker.setSelectedItemIndex((Int(tempo) - 10) / 5)
+            }
+        }
+        else if message["StartMetronome"] != nil{
+            let tempo = message["StartMetronome"] as! Double
+            self.bpmPicker.setSelectedItemIndex((Int(tempo) - 10) / 5)
+
+>>>>>>> Stashed changes
             timer.startMetronome()
         }
         else if message["StopMetronome"] != nil{
