@@ -35,7 +35,16 @@ class MetronomeTimer: NSObject, WCSessionDelegate {
 
     internal static let instance: MetronomeTimer = MetronomeTimer()
 
-
+    override init() {
+        super.init()
+        if WCSession.isSupported() {
+            session = WCSession.defaultSession()
+            session.delegate = self
+            session.activateSession()
+        }
+    }
+    
+    
     func stopMetronome(){
         if isRunning {
             isRunning = false
@@ -92,6 +101,24 @@ class MetronomeTimer: NSObject, WCSessionDelegate {
                 print(error)
         })
     }
+    
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        if message["ChangeTempo"] != nil{
+                //score stuff update
+                let tempo = message["ChangeTempo"] as! Double
+                self.tempo = tempo;
+        }
+        else if message["StartMetronome"] != nil{
+            let tempo = message["StartMetronome"] as! Double
+            self.tempo = tempo;
+            
+            self.startMetronome()
+        }
+        else if message["StopMetronome"] != nil{
+            self.stopMetronome()
+        }
+    }
+
 
 
 

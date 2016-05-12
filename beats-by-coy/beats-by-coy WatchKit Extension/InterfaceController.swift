@@ -75,7 +75,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
         let bpmValue = (value * 5) + 10
         defaults.setValue(bpmValue, forKey: "BPM")
         
-        self.session.sendMessage(["BPMChanged": bpmValue], replyHandler: { (response) -> Void in
+        self.timer.session.sendMessage(["BPMChanged": bpmValue], replyHandler: { (response) -> Void in
             }, errorHandler: { (error) -> Void in
                 print(error)
         })
@@ -92,12 +92,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        if WCSession.isSupported() {
-            session = WCSession.defaultSession()
-            session.delegate = self
-            session.activateSession()
-            self.timer.session = session;
-        }
+
     }
 
     override func didDeactivate() {
