@@ -14,12 +14,13 @@ class SettingsController: WKInterfaceController, WCSessionDelegate{
 
     // MARK: Properties
     @IBOutlet var countdownSettingLabel: WKInterfaceLabel!
-    
-    
+
+
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         // Configure interface objects here.
         let defaults = NSUserDefaults.standardUserDefaults()
+
         
         if ((defaults.valueForKey("Countdown")) != nil) {
             let seconds = defaults.stringForKey("Countdown")!

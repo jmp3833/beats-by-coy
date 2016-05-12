@@ -35,7 +35,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         // Configure interface objects here.
-        bpmPicker.setItems((10...120).map(createPickerItem))
+        bpmPicker.setItems((10...200).filter({$0%5==0}).map(createPickerItem))
         
         let defaults = NSUserDefaults.standardUserDefaults()
         
@@ -72,8 +72,14 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate{
     @IBAction func bpmPickerChanged(value: Int) {
         // Save BPM in settings
         let defaults = NSUserDefaults.standardUserDefaults()
+        let bpmValue = (value * 5) + 10
+        defaults.setValue(bpmValue, forKey: "BPM")
         
-        defaults.setValue(value, forKey: "BPM")
+        self.session.sendMessage(["BPMChanged": bpmValue], replyHandler: { (response) -> Void in
+            }, errorHandler: { (error) -> Void in
+                print(error)
+        })
+
     }
     
     /*

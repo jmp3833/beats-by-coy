@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		993B3A1D1CA99E40006D8A43 /* MetronomeTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993B3A1C1CA99E40006D8A43 /* MetronomeTimer.swift */; };
 		99CA6C821C90A58C007AF6E6 /* TimeSigController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CA6C811C90A58C007AF6E6 /* TimeSigController.swift */; };
+
+		092864FC1C9342F6006CD467 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092864FB1C9342F6006CD467 /* SettingsController.swift */; };
+		1FB081191C934967008318A5 /* VibrationTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB081181C934967008318A5 /* VibrationTypeController.swift */; };
+
 		ADAD892E1C7B8EF1003094DC /* MetronomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAD892D1C7B8EF1003094DC /* MetronomeViewController.swift */; };
 		D0B878D31C7B51F800015C9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B878D21C7B51F800015C9C /* AppDelegate.swift */; };
 		D0B878D51C7B51F800015C9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B878D41C7B51F800015C9C /* ViewController.swift */; };
@@ -86,6 +91,8 @@
 /* Begin PBXFileReference section */
 		993B3A1C1CA99E40006D8A43 /* MetronomeTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetronomeTimer.swift; sourceTree = "<group>"; };
 		99CA6C811C90A58C007AF6E6 /* TimeSigController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSigController.swift; sourceTree = "<group>"; };
+		092864FB1C9342F6006CD467 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		1FB081181C934967008318A5 /* VibrationTypeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VibrationTypeController.swift; sourceTree = "<group>"; };
 		ADAD892D1C7B8EF1003094DC /* MetronomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MetronomeViewController.swift; path = ../MetronomeViewController.swift; sourceTree = "<group>"; };
 		D0B878CF1C7B51F800015C9C /* beats-by-coy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "beats-by-coy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0B878D21C7B51F800015C9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -220,8 +227,12 @@
 				D0B879131C7B51F900015C9C /* Assets.xcassets */,
 				D0B879151C7B51F900015C9C /* Info.plist */,
 				D0B8790B1C7B51F900015C9C /* Supporting Files */,
+
 				99CA6C811C90A58C007AF6E6 /* TimeSigController.swift */,
 				993B3A1C1CA99E40006D8A43 /* MetronomeTimer.swift */,
+				092864FB1C9342F6006CD467 /* SettingsController.swift */,
+				1FB081181C934967008318A5 /* VibrationTypeController.swift */,
+
 			);
 			path = "beats-by-coy WatchKit Extension";
 			sourceTree = "<group>";
@@ -339,7 +350,7 @@
 				TargetAttributes = {
 					D0B878CE1C7B51F800015C9C = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = J2R83H3T9Z;
+						DevelopmentTeam = 77L8R2WR66;
 					};
 					D0B878E21C7B51F900015C9C = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -351,9 +362,11 @@
 					};
 					D0B878F61C7B51F900015C9C = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 77L8R2WR66;
 					};
 					D0B879051C7B51F900015C9C = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 77L8R2WR66;
 					};
 				};
 			};
@@ -471,6 +484,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				99CA6C821C90A58C007AF6E6 /* TimeSigController.swift in Sources */,
+				092864FC1C9342F6006CD467 /* SettingsController.swift in Sources */,
+				1FB081191C934967008318A5 /* VibrationTypeController.swift in Sources */,
 				D0B879121C7B51F900015C9C /* NotificationController.swift in Sources */,
 				D0B879101C7B51F900015C9C /* ExtensionDelegate.swift in Sources */,
 				D0B8790E1C7B51F900015C9C /* InterfaceController.swift in Sources */,
@@ -615,10 +630,13 @@
 		D0B879191C7B51F900015C9C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "beats-by-coy WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coy.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coi.watchkit.extension";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -629,10 +647,13 @@
 		D0B8791A1C7B51F900015C9C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "beats-by-coy WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coy.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coi.watchkit.extension";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -644,11 +665,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = beats_by_coy_WatchKit_Extension;
 				INFOPLIST_FILE = "beats-by-coy WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coy.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coi.watchkit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -660,11 +684,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = beats_by_coy_WatchKit_Extension;
 				INFOPLIST_FILE = "beats-by-coy WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coy.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coi.watchkit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -680,7 +707,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "beats-by-coy/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coy";
+				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -694,7 +721,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "beats-by-coy/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coy";
+				PRODUCT_BUNDLE_IDENTIFIER = "aintworriedboutnothin.beats-by-coi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
