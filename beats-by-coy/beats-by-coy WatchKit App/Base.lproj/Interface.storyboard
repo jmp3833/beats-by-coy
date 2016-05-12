@@ -170,16 +170,53 @@
         <!--SignatureController-->
         <scene sceneID="ssi-Be-7k1">
             <objects>
-                <controller identifier="SignatureController" id="eum-Nm-Gj2" userLabel="SignatureController">
+                <controller identifier="SignatureController" id="eum-Nm-Gj2" userLabel="SignatureController" customClass="TimeSigController" customModule="beats_by_coy_WatchKit_Extension">
                     <items>
-                        <group width="1" alignment="left" id="kGK-bg-AaM">
+                        <group width="1" height="145" alignment="left" verticalAlignment="center" id="kGK-bg-AaM">
                             <items>
-                                <label alignment="left" text="Signature view" id="MAF-Oa-kQ5"/>
+                                <group width="70" height="1" alignment="left" verticalAlignment="center" layout="vertical" spacing="30" id="W8a-Dp-BPp">
+                                    <items>
+                                        <button width="1" alignment="center" verticalAlignment="center" title="Button" id="C71-Lw-dMN">
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="font" type="system" pointSize="15"/>
+                                            <connections>
+                                                <action selector="onUpperTap" destination="eum-Nm-Gj2" id="uyM-4L-c4o"/>
+                                            </connections>
+                                        </button>
+                                        <button width="1" alignment="center" verticalAlignment="center" title="Button" id="qdO-I0-dZT">
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="onLowerTap" destination="eum-Nm-Gj2" id="Al5-JF-cd3"/>
+                                            </connections>
+                                        </button>
+                                    </items>
+                                </group>
+                                <group width="59" height="1" alignment="right" verticalAlignment="center" layout="vertical" id="rwI-jb-dZY">
+                                    <items>
+                                        <picker height="1" alignment="left" id="qNO-FX-uvd">
+                                            <connections>
+                                                <action selector="onUpperSet:" destination="eum-Nm-Gj2" id="lFm-nE-oJC"/>
+                                            </connections>
+                                        </picker>
+                                        <picker height="1" alignment="left" id="3dd-k2-qZr">
+                                            <connections>
+                                                <action selector="onLowerSet:" destination="eum-Nm-Gj2" id="Ota-O8-q1d"/>
+                                            </connections>
+                                        </picker>
+                                    </items>
+                                </group>
                             </items>
                         </group>
                     </items>
+                    <connections>
+                        <outlet property="lowerPicker" destination="3dd-k2-qZr" id="oWF-Mz-SNY"/>
+                        <outlet property="lowerSignature" destination="qdO-I0-dZT" id="v3V-d6-ODJ"/>
+                        <outlet property="upperPicker" destination="qNO-FX-uvd" id="R8d-JP-5Dk"/>
+                        <outlet property="upperSignature" destination="C71-Lw-dMN" id="Pof-Pw-ojX"/>
+                    </connections>
                 </controller>
             </objects>
+            <point key="canvasLocation" x="39" y="637"/>
         </scene>
         <!--VolumeController-->
         <scene sceneID="aUf-04-8ue">
